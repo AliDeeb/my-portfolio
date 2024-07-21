@@ -3,7 +3,9 @@ part of 'themes_data.dart';
 ThemeData _getLightTheme() {
   return ThemeData(
     brightness: Brightness.light,
-    colorScheme: const ColorScheme.light(),
+    colorScheme: const ColorScheme.light(
+      primary: Colors.blue,
+    ),
     extensions: const [
       CustomThemeColors.light,
     ],

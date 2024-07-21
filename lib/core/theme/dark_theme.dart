@@ -3,7 +3,9 @@ part of 'themes_data.dart';
 ThemeData _getDarkTheme() {
   return ThemeData(
     brightness: Brightness.dark,
-    colorScheme: const ColorScheme.dark(),
+    colorScheme: const ColorScheme.dark(
+      primary: Colors.blue,
+    ),
     extensions: const [
       CustomThemeColors.dark,
     ],
