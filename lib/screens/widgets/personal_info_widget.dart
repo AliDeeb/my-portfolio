@@ -75,9 +75,18 @@ class PersonalInfoWidget extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.file_download_outlined, size: 20),
+              const Icon(
+                Icons.file_download_outlined,
+                size: 20,
+                color: Colors.white,
+              ),
               10.horizontalSpace,
-              const Text("Download Resume"),
+              Text(
+                "Download Resume",
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: Colors.white,
+                    ),
+              ),
             ],
           ),
         ),
