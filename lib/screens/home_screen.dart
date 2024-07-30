@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'widgets/about_me_widget.dart';
 import 'widgets/personal_info_widget.dart';
+import 'widgets/work_experience_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,10 +17,22 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(vertical: 100.h),
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Expanded(flex: 1, child: PersonalInfoWidget()),
-            Expanded(flex: 3, child: Container(color: Colors.blue)),
+            Expanded(
+              flex: 3,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const AboutMeWidget(),
+                  50.verticalSpace,
+                  const WorkExperienceWidget(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
