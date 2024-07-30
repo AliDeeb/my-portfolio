@@ -6,7 +6,7 @@ ThemeData _getLightTheme() {
     colorScheme: const ColorScheme.light(
       primary: Colors.blue,
     ),
-    extensions: const [
+    extensions: [
       CustomThemeColors.light,
     ],
     textTheme: TextTheme(

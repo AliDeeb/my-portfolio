@@ -4,17 +4,21 @@ import 'package:flutter/material.dart';
 @immutable
 class CustomThemeColors extends ThemeExtension<CustomThemeColors> {
   final Color? textColor;
+  final LinearGradient? toolsSectionGradient;
 
   const CustomThemeColors({
     required this.textColor,
+    required this.toolsSectionGradient,
   });
 
   @override
   CustomThemeColors copyWith({
     Color? testButtonColor,
+    LinearGradient? toolsSectionGradient,
   }) {
     return CustomThemeColors(
       textColor: testButtonColor ?? textColor,
+      toolsSectionGradient: toolsSectionGradient ?? toolsSectionGradient,
     );
   }
 
@@ -25,16 +29,32 @@ class CustomThemeColors extends ThemeExtension<CustomThemeColors> {
     }
     return CustomThemeColors(
       textColor: Color.lerp(textColor, other.textColor, t),
+      toolsSectionGradient: LinearGradient.lerp(
+          toolsSectionGradient, other.toolsSectionGradient, t),
     );
   }
 
   // the light theme
-  static const light = CustomThemeColors(
-    textColor: Color(0xFF2E4790),
+  static CustomThemeColors light = CustomThemeColors(
+    textColor: const Color(0xFF2E4790),
+    toolsSectionGradient: LinearGradient(
+      colors: [
+        Colors.grey.shade200,
+        Colors.grey.shade100,
+        Colors.grey.shade50,
+      ],
+    ),
   );
 
   // the dark theme
-  static const dark = CustomThemeColors(
+  static CustomThemeColors dark = const CustomThemeColors(
     textColor: Colors.white,
+    toolsSectionGradient: LinearGradient(
+      colors: [
+        Colors.black,
+        Colors.black12,
+        Colors.black26,
+      ],
+    ),
   );
 }

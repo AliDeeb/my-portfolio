@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/core/theme/custom_theme_colors.dart';
 
 import 'widgets/about_me_widget.dart';
 import 'widgets/personal_info_widget.dart';
@@ -17,7 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(vertical: 100.h),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -31,6 +31,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   50.verticalSpace,
                   const WorkExperienceWidget(),
                 ],
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                height: 1.sh,
+                decoration: BoxDecoration(
+                    gradient: Theme.of(context)
+                        .extension<CustomThemeColors>()
+                        ?.toolsSectionGradient),
               ),
             ),
           ],

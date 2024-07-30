@@ -6,7 +6,7 @@ ThemeData _getDarkTheme() {
     colorScheme: const ColorScheme.dark(
       primary: Colors.blue,
     ),
-    extensions: const [
+    extensions: [
       CustomThemeColors.dark,
     ],
     textTheme: TextTheme(
