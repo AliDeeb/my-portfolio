@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_portfolio/core/theme/custom_theme_colors.dart';
 
 import 'widgets/about_me_widget.dart';
 import 'widgets/personal_info_widget.dart';
+import 'widgets/tools_widget.dart';
 import 'widgets/work_experience_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -33,16 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                height: 1.sh,
-                decoration: BoxDecoration(
-                    gradient: Theme.of(context)
-                        .extension<CustomThemeColors>()
-                        ?.toolsSectionGradient),
-              ),
-            ),
+            const Expanded(flex: 1, child: ToolsWidget()),
           ],
         ),
       ),
