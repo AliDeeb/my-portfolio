@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  100.verticalSpace,
                   const AboutMeWidget(),
                   50.verticalSpace,
                   const WorkExperienceWidget(),
@@ -45,6 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 decoration: BoxDecoration(gradient: gradient),
                 child: Column(
                   children: [
+                    50.verticalSpace,
                     const ThemeSwitcher(),
                     50.verticalSpace,
                     Padding(

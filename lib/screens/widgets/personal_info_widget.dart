@@ -15,108 +15,123 @@ class PersonalInfoWidget extends StatelessWidget {
     final textColor =
         Theme.of(context).extension<CustomThemeColors>()!.textColor;
 
-    return Column(
-      children: [
-        // Name and Photo.
-        Column(
-          children: [
-            Container(
-              width: imageSize,
-              height: imageSize,
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                image: DecorationImage(
-                  image: AssetImage(AppConstants.IMG_PROFILE_IMAGE),
+    return Padding(
+      padding: EdgeInsets.only(top: 100.h),
+      child: Column(
+        children: [
+          // Name and Photo.
+          Column(
+            children: [
+              Container(
+                width: imageSize,
+                height: imageSize,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: AssetImage(AppConstants.IMG_PROFILE_IMAGE),
+                  ),
                 ),
               ),
-            ),
-            30.verticalSpace,
-            Text(
-              "Ali Deeb",
-              style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: textColor,
-                  ),
-            ),
-            10.verticalSpace,
-            Text(
-              "Senior Flutter Developer",
-              style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: textColor,
-                  ),
-            ),
-          ],
-        ),
-        50.verticalSpace,
-
-        // Contact info.
-        Padding(
-          padding: EdgeInsets.symmetric(horizontal: 100.w),
-          child: Column(
-            children: [
-              _buildInfoRow(
-                  Icons.email_outlined, "ali1alideeb@gmail.com", context),
-              const Divider(color: AppColors.greyColor100, height: 30),
-              _buildInfoRow(Icons.phone_outlined, "0888888888", context),
-              const Divider(color: AppColors.greyColor100, height: 30),
-              _buildInfoRow(Icons.location_pin, "Damascus", context),
-              const Divider(color: AppColors.greyColor100, height: 30),
-            ],
-          ),
-        ),
-
-        // resume.
-        50.verticalSpace,
-        FilledButton(
-          style: FilledButton.styleFrom(
-            padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 30.h),
-          ),
-          onPressed: onDownloadResumeTap,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Icon(
-                Icons.file_download_outlined,
-                size: 20,
-                color: Colors.white,
-              ),
-              10.horizontalSpace,
+              30.verticalSpace,
               Text(
-                "Download Resume",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: Colors.white,
+                "Ali Deeb",
+                style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: textColor,
+                    ),
+              ),
+              10.verticalSpace,
+              Text(
+                "Senior Flutter Developer",
+                style: Theme.of(context).textTheme.labelMedium?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: textColor,
                     ),
               ),
             ],
           ),
-        ),
+          50.verticalSpace,
 
-        // social media links
-        25.verticalSpace,
-        SizedBox(
-          height: 50.h,
-          child: Wrap(
-            spacing: 20.w,
-            children: [
-              InkWell(
-                onTap: onLinkedInTap,
-                child: Image.asset(
-                  AppConstants.IMG_LINKEDIN_LOGO,
-                  height: 50.h,
-                ),
-              ),
-              InkWell(
-                onTap: onGithubTap,
-                child: Image.asset(
-                  AppConstants.IMG_GITHUB_LOGO,
-                  height: 50.h,
-                ),
-              ),
-            ],
+          // Contact info.
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 100.w),
+            child: Column(
+              children: [
+                _buildInfoRow(
+                    Icons.email_outlined, "ali1alideeb@gmail.com", context),
+                const Divider(color: AppColors.greyColor100, height: 30),
+                _buildInfoRow(Icons.phone_outlined, "0888888888", context),
+                const Divider(color: AppColors.greyColor100, height: 30),
+                _buildInfoRow(Icons.location_pin, "Damascus", context),
+                const Divider(color: AppColors.greyColor100, height: 30),
+              ],
+            ),
           ),
-        ),
-      ],
+
+          // resume.
+          50.verticalSpace,
+          FilledButton(
+            style: FilledButton.styleFrom(
+              padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 30.h),
+            ),
+            onPressed: onDownloadResumeTap,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.file_download_outlined,
+                  size: 20,
+                  color: Colors.white,
+                ),
+                10.horizontalSpace,
+                Text(
+                  "Download Resume",
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        color: Colors.white,
+                      ),
+                ),
+              ],
+            ),
+          ),
+
+          // social media links
+          25.verticalSpace,
+          SizedBox(
+            height: 50.h,
+            child: Wrap(
+              spacing: 20.w,
+              children: [
+                InkWell(
+                  onTap: onLinkedInTap,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset(
+                      AppConstants.IMG_LINKEDIN_LOGO,
+                      height: 50.h,
+                    ),
+                  ),
+                ),
+                InkWell(
+                  onTap: onGithubTap,
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Image.asset(
+                      AppConstants.IMG_GITHUB_LOGO,
+                      height: 50.h,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 
