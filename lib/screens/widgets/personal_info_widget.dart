@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/theme/custom_theme_colors.dart';
+import 'dart:js' as js;
 
 class PersonalInfoWidget extends StatelessWidget {
   const PersonalInfoWidget({super.key});
@@ -90,6 +91,31 @@ class PersonalInfoWidget extends StatelessWidget {
             ],
           ),
         ),
+
+        // social media links
+        25.verticalSpace,
+        SizedBox(
+          height: 50.h,
+          child: Wrap(
+            spacing: 20.w,
+            children: [
+              InkWell(
+                onTap: onLinkedInTap,
+                child: Image.asset(
+                  AppConstants.IMG_LINKEDIN_LOGO,
+                  height: 50.h,
+                ),
+              ),
+              InkWell(
+                onTap: onGithubTap,
+                child: Image.asset(
+                  AppConstants.IMG_GITHUB_LOGO,
+                  height: 50.h,
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -117,5 +143,16 @@ class PersonalInfoWidget extends StatelessWidget {
     );
   }
 
-  void onDownloadResumeTap() {}
+  void onDownloadResumeTap() {
+    // js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
+  }
+
+  void onLinkedInTap() {
+    js.context
+        .callMethod('open', ['https://www.linkedin.com/in/ali-deeb-62b1561a5']);
+  }
+
+  void onGithubTap() {
+    js.context.callMethod('open', ['https://github.com/AliDeeb']);
+  }
 }
