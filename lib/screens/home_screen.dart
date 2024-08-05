@@ -7,7 +7,7 @@ import 'widgets/personal_info_widget.dart';
 import 'widgets/professional_skills_widget.dart';
 import 'widgets/theme_switcher.dart';
 import 'widgets/tools_widget.dart';
-import 'widgets/work_experience_widget.dart';
+import 'widgets/work_experiences_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -30,14 +30,17 @@ class _HomeScreenState extends State<HomeScreen> {
             const Expanded(flex: 1, child: PersonalInfoWidget()),
             Expanded(
               flex: 3,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  100.verticalSpace,
-                  const AboutMeWidget(),
-                  50.verticalSpace,
-                  const WorkExperienceWidget(),
-                ],
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(end: 75.w),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    100.verticalSpace,
+                    const AboutMeWidget(),
+                    50.verticalSpace,
+                    const WorkExperiencesWidget(),
+                  ],
+                ),
               ),
             ),
             Expanded(
