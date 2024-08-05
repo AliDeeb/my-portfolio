@@ -35,9 +35,10 @@ class ToolWidget extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10.r),
-              child: SizedBox(
-                width: 60.w,
-                height: 60.w,
+              child: Container(
+                color: Colors.white,
+                width: 40.w,
+                height: 40.w,
                 child: Image.asset(
                   asset,
                 ),
@@ -54,7 +55,7 @@ class ToolWidget extends StatelessWidget {
             ),
           ],
         ),
-        Divider(color: Colors.grey.shade300, height: 35),
+        Divider(color: Colors.grey.shade300, height: 30),
       ],
     );
   }
