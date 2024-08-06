@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../core/theme/custom_theme_colors.dart';
 import 'widgets/about_me_widget.dart';
+import 'widgets/education_section.dart';
 import 'widgets/personal_info_widget.dart';
 import 'widgets/professional_skills_widget.dart';
 import 'widgets/theme_switcher.dart';
@@ -39,6 +40,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     const AboutMeWidget(),
                     50.verticalSpace,
                     const WorkExperiencesWidget(),
+                    50.verticalSpace,
+                    EducationSection(),
                   ],
                 ),
               ),
