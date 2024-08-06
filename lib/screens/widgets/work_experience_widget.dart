@@ -11,12 +11,14 @@ class WorkExperienceWidget extends StatelessWidget {
     required this.work,
     required this.time,
     required this.city,
+    required this.company,
     required this.firstDate,
     required this.endDate,
   });
   final String work;
   final String time;
   final String city;
+  final String company;
   final DateTime firstDate;
   final DateTime? endDate;
 
@@ -53,13 +55,27 @@ class WorkExperienceWidget extends StatelessWidget {
             ),
           ],
         ),
-        20.verticalSpace,
+        25.verticalSpace,
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
+                const Icon(
+                  Icons.location_city,
+                  size: 10,
+                  color: AppColors.greyColor200,
+                ),
+                5.horizontalSpace,
+                Text(
+                  company,
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+                50.horizontalSpace,
                 const Icon(
                   Icons.location_pin,
                   size: 10,
@@ -75,12 +91,22 @@ class WorkExperienceWidget extends StatelessWidget {
                 ),
               ],
             ),
-            Text(
-              "${DateFormat('MMMM d,y').format(firstDate)} - ${endDate == null ? '' : DateFormat('MMMM d,y').format(endDate!)}",
-              style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w600,
-                  ),
+            Row(
+              children: [
+                const Icon(
+                  Icons.calendar_month,
+                  size: 10,
+                  color: AppColors.greyColor200,
+                ),
+                5.horizontalSpace,
+                Text(
+                  "${DateFormat('MMMM d,y').format(firstDate)} - ${endDate == null ? '' : DateFormat('MMMM d,y').format(endDate!)}",
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+              ],
             ),
           ],
         ),
