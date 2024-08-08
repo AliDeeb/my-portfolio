@@ -11,4 +11,7 @@ class AppConstants {
   static const String IMG_GITLAB_LOGO = "assets/png/gitlab_logo.png";
   static const String IMG_DEVOPS_LOGO = "assets/png/devops_logo.png";
   static const String IMG_LINKEDIN_LOGO = "assets/png/linkedin_logo.png";
+  static const String IMG_BUNYAN_PLUS_LOGO = "assets/png/bunyan_plus_logo.png";
+  static const String IMG_GK_AUTO_LOGO = "assets/png/gk_logo.png";
+  static const String IMG_SADAF_LOGO = "assets/png/sadaf_logo.png";
 }

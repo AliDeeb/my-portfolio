@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/screens/widgets/applications_section.dart';
 
 import '../core/theme/custom_theme_colors.dart';
 import 'widgets/about_me_widget.dart';
@@ -25,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -41,7 +43,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     50.verticalSpace,
                     const WorkExperiencesWidget(),
                     50.verticalSpace,
-                    EducationSection(),
+                    const EducationSection(),
+                    50.verticalSpace,
+                    const ApplicationsSection(),
                   ],
                 ),
               ),
