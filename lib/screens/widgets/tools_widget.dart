@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/constants/app_constants.dart';
 import '../../core/theme/custom_theme_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 import 'tool_widget.dart';
 
 class ToolsWidget extends StatefulWidget {
@@ -21,10 +22,10 @@ class _ToolsWidgetState extends State<ToolsWidget> {
       children: [
         Text(
           "Tools",
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
+          style: TextThemeStyles.headlineSmall.copyWith(
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
         ),
         40.verticalSpace,
         // const ToolWidget(

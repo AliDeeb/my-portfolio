@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../core/theme/custom_theme_colors.dart';
 import 'dart:js' as js;
 
+import '../../core/theme/text_theme_styles.dart';
+
 class ApplicationWidget extends StatelessWidget {
   const ApplicationWidget({
     super.key,
@@ -27,10 +29,10 @@ class ApplicationWidget extends StatelessWidget {
       children: [
         Text(
           applicationName,
-          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w600,
-                color: color,
-              ),
+          style: TextThemeStyles.titleLarge.copyWith(
+            fontWeight: FontWeight.w600,
+            color: color,
+          ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -56,11 +58,11 @@ class ApplicationWidget extends StatelessWidget {
                       10.verticalSpace,
                       Text(
                         "$applicationName - Google play",
-                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: color,
-                              decoration: TextDecoration.underline,
-                            ),
+                        style: TextThemeStyles.titleSmall.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: color,
+                          decoration: TextDecoration.underline,
+                        ),
                       )
                     ],
                   ),
@@ -88,11 +90,11 @@ class ApplicationWidget extends StatelessWidget {
                       10.verticalSpace,
                       Text(
                         "$applicationName - Apple Store",
-                        style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                              fontWeight: FontWeight.w600,
-                              color: color,
-                              decoration: TextDecoration.underline,
-                            ),
+                        style: TextThemeStyles.titleSmall.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: color,
+                          decoration: TextDecoration.underline,
+                        ),
                       )
                     ],
                   ),

@@ -10,8 +10,20 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
+  Size designSize = const Size(1920, 1080);
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addObserver(this);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +33,7 @@ class MyApp extends StatelessWidget {
         return Consumer<ThemeProvider>(
           builder: (context, value, _) {
             return ScreenUtilInit(
-              designSize: const Size(1920, 1080),
+              designSize: designSize,
               builder: (context, child) => MaterialApp(
                 theme: value.currentTheme == ThemeMode.light
                     ? ThemesData.lightTheme
@@ -34,5 +46,28 @@ class MyApp extends StatelessWidget {
         );
       },
     );
+  }
+
+  @override
+  void didChangeMetrics() {
+    final windowSize = MediaQuery.of(context).size;
+    // print(windowSize);
+    if (windowSize.width < 800) {
+      setState(() {
+        designSize = const Size(1920, 1080);
+      });
+    } else {
+      setState(() {
+        designSize = const Size(1920, 1080);
+      });
+    }
+    super.didChangeMetrics();
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
+
+    super.dispose();
   }
 }

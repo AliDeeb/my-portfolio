@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/theme/custom_theme_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 import 'professional_skill_widget.dart';
 
 class ProfessionalSkillsWidget extends StatefulWidget {
@@ -22,10 +23,10 @@ class _ProfessionalSkillsWidgetState extends State<ProfessionalSkillsWidget> {
       children: [
         Text(
           "Professional Skills",
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
+          style: TextThemeStyles.headlineSmall.copyWith(
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
         ),
         50.verticalSpace,
         const ProfessionalSkillWidget(

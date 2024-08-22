@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_portfolio/core/theme/text_theme_styles.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_constants.dart';
@@ -35,18 +36,18 @@ class PersonalInfoWidget extends StatelessWidget {
               30.verticalSpace,
               Text(
                 "Ali Deeb",
-                style: Theme.of(context).textTheme.displayMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: textColor,
-                    ),
+                style: TextThemeStyles.displayMedium.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: textColor,
+                ),
               ),
               10.verticalSpace,
               Text(
                 "Senior Flutter Developer",
-                style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: textColor,
-                    ),
+                style: TextThemeStyles.labelMedium.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: textColor,
+                ),
               ),
             ],
           ),
@@ -86,9 +87,9 @@ class PersonalInfoWidget extends StatelessWidget {
                 10.horizontalSpace,
                 Text(
                   "Download Resume",
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        color: Colors.white,
-                      ),
+                  style: TextThemeStyles.bodyLarge.copyWith(
+                    color: Colors.white,
+                  ),
                 ),
               ],
             ),
@@ -149,10 +150,10 @@ class PersonalInfoWidget extends StatelessWidget {
         15.horizontalSpace,
         Text(
           text,
-          style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: textColor,
-              ),
+          style: TextThemeStyles.labelSmall.copyWith(
+            fontWeight: FontWeight.bold,
+            color: textColor,
+          ),
         ),
       ],
     );

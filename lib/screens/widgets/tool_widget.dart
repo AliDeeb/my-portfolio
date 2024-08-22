@@ -3,6 +3,7 @@ import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.da
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/constants/app_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 
 class ToolWidget extends StatelessWidget {
   const ToolWidget({
@@ -25,10 +26,10 @@ class ToolWidget extends StatelessWidget {
       children: [
         Text(
           name,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Colors.grey,
-                fontWeight: FontWeight.w600,
-              ),
+          style: TextThemeStyles.bodyMedium.copyWith(
+            color: Colors.grey,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         15.verticalSpace,
         Row(

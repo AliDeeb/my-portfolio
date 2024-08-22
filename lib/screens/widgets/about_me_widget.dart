@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/theme/custom_theme_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 
 class AboutMeWidget extends StatelessWidget {
   const AboutMeWidget({super.key});
@@ -19,18 +20,18 @@ My career is also marked by a commitment to continuous learning and adaptation, 
       children: [
         Text(
           "About me",
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
+          style: TextThemeStyles.headlineMedium.copyWith(
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
         ),
         25.verticalSpace,
         Text(
           aboutMe,
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: color,
-                fontWeight: FontWeight.w600,
-              ),
+          style: TextThemeStyles.bodyLarge.copyWith(
+            color: color,
+            fontWeight: FontWeight.w600,
+          ),
         ),
       ],
     );

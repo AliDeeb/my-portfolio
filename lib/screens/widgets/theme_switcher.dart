@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/core/theme/text_theme_styles.dart';
 import 'package:provider/provider.dart';
 
 import '../../core/constants/app_colors.dart';
@@ -43,14 +44,14 @@ class _ThemeSwitcherState extends State<ThemeSwitcher> {
           ),
         ),
       ),
-      segments: const [
+      segments: [
         ButtonSegment(
           value: ThemeMode.light,
-          label: Text("Light"),
+          label: Text("Light", style: TextThemeStyles.labelMedium),
         ),
         ButtonSegment(
           value: ThemeMode.dark,
-          label: Text("Dark"),
+          label: Text("Dark", style: TextThemeStyles.labelMedium),
         ),
       ],
       selected: {context.read<ThemeProvider>().currentTheme},

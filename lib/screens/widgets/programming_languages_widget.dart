@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/theme/custom_theme_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 import 'professional_skill_widget.dart';
 
 class ProgrammingLanguages extends StatelessWidget {
@@ -16,10 +17,10 @@ class ProgrammingLanguages extends StatelessWidget {
       children: [
         Text(
           "Programming Languages",
-          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
+          style: TextThemeStyles.headlineSmall.copyWith(
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
         ),
         40.verticalSpace,
         const ProfessionalSkillWidget(

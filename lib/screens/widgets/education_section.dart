@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/theme/custom_theme_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 import 'education_widget.dart';
 
 class EducationSection extends StatelessWidget {
@@ -16,10 +17,10 @@ class EducationSection extends StatelessWidget {
       children: [
         Text(
           "Education",
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
+          style: TextThemeStyles.headlineMedium.copyWith(
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
         ),
         50.verticalSpace,
         EducationWidget(

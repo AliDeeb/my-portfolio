@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../core/theme/custom_theme_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 
 class EducationWidget extends StatelessWidget {
   const EducationWidget({
@@ -32,10 +33,10 @@ class EducationWidget extends StatelessWidget {
           children: [
             Text(
               education,
-              style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: color,
-                  ),
+              style: TextThemeStyles.titleSmall.copyWith(
+                fontWeight: FontWeight.w600,
+                color: color,
+              ),
             ),
             Container(
               decoration: BoxDecoration(
@@ -45,10 +46,10 @@ class EducationWidget extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
               child: Text(
                 time,
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.blue,
-                    ),
+                style: TextThemeStyles.bodySmall.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.blue,
+                ),
               ),
             ),
           ],
@@ -68,12 +69,11 @@ class EducationWidget extends StatelessWidget {
                 5.horizontalSpace,
                 Text(
                   university,
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w600,
-                      ),
+                  style: TextThemeStyles.labelSmall.copyWith(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
-                
               ],
             ),
             Row(
@@ -86,10 +86,10 @@ class EducationWidget extends StatelessWidget {
                 5.horizontalSpace,
                 Text(
                   "${DateFormat('MMMM d,y').format(firstDate)} - ${endDate == null ? '' : DateFormat('MMMM d,y').format(endDate!)}",
-                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                        color: Colors.grey,
-                        fontWeight: FontWeight.w600,
-                      ),
+                  style: TextThemeStyles.labelSmall.copyWith(
+                    color: Colors.grey,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ],
             ),

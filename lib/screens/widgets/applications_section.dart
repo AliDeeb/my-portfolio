@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/constants/app_constants.dart';
 import '../../core/theme/custom_theme_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 import 'application_widget.dart';
 
 class ApplicationsSection extends StatelessWidget {
@@ -17,10 +18,10 @@ class ApplicationsSection extends StatelessWidget {
       children: [
         Text(
           "Applications",
-          style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: color,
-              ),
+          style: TextThemeStyles.headlineMedium.copyWith(
+            fontWeight: FontWeight.bold,
+            color: color,
+          ),
         ),
         50.verticalSpace,
         const ApplicationWidget(

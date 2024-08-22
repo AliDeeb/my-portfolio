@@ -3,6 +3,7 @@ import 'package:flutter_animation_progress_bar/flutter_animation_progress_bar.da
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/constants/app_colors.dart';
+import '../../core/theme/text_theme_styles.dart';
 
 class ProfessionalSkillWidget extends StatelessWidget {
   const ProfessionalSkillWidget({
@@ -22,10 +23,10 @@ class ProfessionalSkillWidget extends StatelessWidget {
       children: [
         Text(
           skill,
-          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Colors.grey,
-                fontWeight: FontWeight.w600,
-              ),
+          style: TextThemeStyles.bodyMedium.copyWith(
+            color: Colors.grey,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         10.verticalSpace,
         FAProgressBar(
