@@ -6,6 +6,7 @@ import 'widgets/about_me_widget.dart';
 import 'widgets/applications_section.dart';
 import 'widgets/education_section.dart';
 import 'widgets/personal_info_widget.dart';
+import 'widgets/professional_skills_widget.dart';
 import 'widgets/programming_languages_widget.dart';
 import 'widgets/theme_switcher.dart';
 import 'widgets/tools_widget.dart';
@@ -68,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           50.verticalSpace,
                           const ProgrammingLanguages(),
                           50.verticalSpace,
-                          // const ProfessionalSkillsWidget(),
+                          const ProfessionalSkillsWidget(),
                         ],
                       ),
                     ),
