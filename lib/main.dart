@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'core/providers/theme_provider.dart';
 import 'core/theme/themes_data.dart';
 import 'screens/home_screen.dart';
+import 'screens/mobile_home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,9 +20,23 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   Size designSize = const Size(1920, 1080);
+  bool isMobile = false;
+
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      final windowSize = MediaQuery.of(context).size;
+      if (windowSize.width < 800) {
+        isMobile = true;
+        designSize = const Size(612, 812);
+      } else {
+        isMobile = false;
+        designSize = const Size(1920, 1080);
+      }
+      setState(() {});
+    });
+
     WidgetsBinding.instance.addObserver(this);
   }
 
@@ -39,7 +54,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
                     ? ThemesData.lightTheme
                     : ThemesData.darkTheme,
                 debugShowCheckedModeBanner: false,
-                home: const HomeScreen(),
+                home: isMobile ? const MobileHomeScreen() : const HomeScreen(),
               ),
             );
           },
@@ -51,13 +66,14 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   void didChangeMetrics() {
     final windowSize = MediaQuery.of(context).size;
-    // print(windowSize);
     if (windowSize.width < 800) {
       setState(() {
-        designSize = const Size(1920, 1080);
+        isMobile = true;
+        designSize = const Size(412, 812);
       });
     } else {
       setState(() {
+        isMobile = false;
         designSize = const Size(1920, 1080);
       });
     }
