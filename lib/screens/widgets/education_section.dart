@@ -23,7 +23,8 @@ class EducationSection extends StatelessWidget {
         ),
         50.verticalSpace,
         EducationWidget(
-          education: "Artifical Intelligence",
+          education:
+              "Bachelor of Informatics Engineering, Artifical Intelligence.",
           time: "Full Time",
           university: "Damascuse University",
           firstDate: DateTime(2015, 9, 1),

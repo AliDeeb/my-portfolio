@@ -59,10 +59,10 @@ class PersonalInfoWidget extends StatelessWidget {
               children: [
                 _buildInfoRow(
                     Icons.email_outlined, "ali1alideeb@gmail.com", context),
+                // const Divider(color: AppColors.greyColor100, height: 30),
+                // _buildInfoRow(Icons.phone_outlined, "0888888888", context),
                 const Divider(color: AppColors.greyColor100, height: 30),
-                _buildInfoRow(Icons.phone_outlined, "0888888888", context),
-                const Divider(color: AppColors.greyColor100, height: 30),
-                _buildInfoRow(Icons.location_pin, "Damascus", context),
+                _buildInfoRow(Icons.location_pin, "Syria / Damascus", context),
                 const Divider(color: AppColors.greyColor100, height: 30),
               ],
             ),
@@ -159,7 +159,9 @@ class PersonalInfoWidget extends StatelessWidget {
   }
 
   void onDownloadResumeTap() {
-    // js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
+    js.context.callMethod('open', [
+      'https://drive.google.com/file/d/1NuO2GSye1Gj95JaZkQMc_WsHjnJYdDv9/view?usp=sharing'
+    ]);
   }
 
   void onLinkedInTap() {

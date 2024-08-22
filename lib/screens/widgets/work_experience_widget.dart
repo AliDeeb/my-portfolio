@@ -14,6 +14,7 @@ class WorkExperienceWidget extends StatelessWidget {
     required this.company,
     required this.firstDate,
     required this.endDate,
+    required this.additionalInfo,
   });
   final String work;
   final String time;
@@ -21,12 +22,14 @@ class WorkExperienceWidget extends StatelessWidget {
   final String company;
   final DateTime firstDate;
   final DateTime? endDate;
+  final List<String> additionalInfo;
 
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).extension<CustomThemeColors>()?.textColor;
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -109,6 +112,19 @@ class WorkExperienceWidget extends StatelessWidget {
               ],
             ),
           ],
+        ),
+        25.verticalSpace,
+        ...additionalInfo.map(
+          (e) => Padding(
+            padding: const EdgeInsets.all(4.0),
+            child: Text(
+              "• $e",
+              style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                    color: color,
+                    fontWeight: FontWeight.w600,
+                  ),
+            ),
+          ),
         ),
         Divider(color: Colors.grey.shade100, height: 30),
       ],
