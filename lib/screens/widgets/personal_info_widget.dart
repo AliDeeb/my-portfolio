@@ -160,7 +160,7 @@ class PersonalInfoWidget extends StatelessWidget {
 
   void onDownloadResumeTap() {
     js.context.callMethod('open', [
-      'https://drive.google.com/file/d/1NuO2GSye1Gj95JaZkQMc_WsHjnJYdDv9/view?usp=sharing'
+      "https://docs.google.com/document/d/1exNrLAESWLeb7SO5Vr9e5vZVwTLY7SqPj2pQLl5NuT8/edit?usp=drive_link"
     ]);
   }
 

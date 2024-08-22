@@ -31,7 +31,7 @@ class WorkExperiencesWidget extends StatelessWidget {
           endDate: null,
           additionalInfo: const [
             "Created applications for IOS and Android.",
-            "Developed, implemented, and maintained three mobile applications for clients with multi language.",
+            "Developed, implemented, and maintained mobile applications for clients with multi language.",
             "Integrated animations for the application UI and widgets.",
             "Analyzed user requirements, and translated client needs into application design.",
             "Provided continued maintenance and development of bug fixes and patch sets for existing applications.",
