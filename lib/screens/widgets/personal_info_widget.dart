@@ -8,7 +8,12 @@ import '../../core/theme/custom_theme_colors.dart';
 import 'dart:js' as js;
 
 class PersonalInfoWidget extends StatelessWidget {
-  const PersonalInfoWidget({super.key});
+  const PersonalInfoWidget({
+    super.key,
+    this.isMobile = false,
+  });
+
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -36,18 +41,29 @@ class PersonalInfoWidget extends StatelessWidget {
               30.verticalSpace,
               Text(
                 "Ali Deeb",
-                style: TextThemeStyles.displayMedium.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: textColor,
-                ),
+                style: isMobile
+                    ? TextThemeStyles.titleLarge.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                      )
+                    : TextThemeStyles.displayMedium.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                      ),
               ),
               10.verticalSpace,
               Text(
                 "Senior Flutter Developer",
-                style: TextThemeStyles.labelMedium.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: textColor,
-                ),
+                style: isMobile
+                    ? TextThemeStyles.labelSmall.copyWith(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 10.sp,
+                        color: textColor,
+                      )
+                    : TextThemeStyles.labelMedium.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                      ),
               ),
             ],
           ),
@@ -55,7 +71,7 @@ class PersonalInfoWidget extends StatelessWidget {
 
           // Contact info.
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 100.w),
+            padding: EdgeInsets.symmetric(horizontal: isMobile ? 50.w : 100.w),
             child: Column(
               children: [
                 _buildInfoRow(

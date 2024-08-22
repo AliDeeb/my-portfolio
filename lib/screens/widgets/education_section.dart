@@ -6,7 +6,8 @@ import '../../core/theme/text_theme_styles.dart';
 import 'education_widget.dart';
 
 class EducationSection extends StatelessWidget {
-  const EducationSection({super.key});
+  const EducationSection({super.key, this.isMobile = false});
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +18,19 @@ class EducationSection extends StatelessWidget {
       children: [
         Text(
           "Education",
-          style: TextThemeStyles.headlineMedium.copyWith(
-            fontWeight: FontWeight.bold,
-            color: color,
-          ),
+          style: isMobile
+              ? TextThemeStyles.titleLarge.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                )
+              : TextThemeStyles.headlineMedium.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
         ),
         50.verticalSpace,
         EducationWidget(
+          isMobile: isMobile,
           education:
               "Bachelor of Informatics Engineering, Artifical Intelligence.",
           time: "Full Time",

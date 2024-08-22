@@ -16,6 +16,7 @@ class WorkExperienceWidget extends StatelessWidget {
     required this.firstDate,
     required this.endDate,
     required this.additionalInfo,
+    this.isMobile = false,
   });
   final String work;
   final String time;
@@ -24,6 +25,7 @@ class WorkExperienceWidget extends StatelessWidget {
   final DateTime firstDate;
   final DateTime? endDate;
   final List<String> additionalInfo;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -38,10 +40,15 @@ class WorkExperienceWidget extends StatelessWidget {
           children: [
             Text(
               work,
-              style: TextThemeStyles.titleSmall.copyWith(
-                fontWeight: FontWeight.w600,
-                color: color,
-              ),
+              style: isMobile
+                  ? TextThemeStyles.labelSmall.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: color,
+                    )
+                  : TextThemeStyles.titleSmall.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: color,
+                    ),
             ),
             Container(
               decoration: BoxDecoration(
@@ -51,10 +58,16 @@ class WorkExperienceWidget extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
               child: Text(
                 time,
-                style: TextThemeStyles.bodySmall.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: Colors.blue,
-                ),
+                style: isMobile
+                    ? TextThemeStyles.labelSmall.copyWith(
+                        fontSize: 8.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.blue,
+                      )
+                    : TextThemeStyles.bodySmall.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.blue,
+                      ),
               ),
             ),
           ],
@@ -74,10 +87,16 @@ class WorkExperienceWidget extends StatelessWidget {
                 5.horizontalSpace,
                 Text(
                   company,
-                  style: TextThemeStyles.labelSmall.copyWith(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: isMobile
+                      ? TextThemeStyles.labelSmall.copyWith(
+                          fontSize: 8.sp,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        )
+                      : TextThemeStyles.labelSmall.copyWith(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        ),
                 ),
                 50.horizontalSpace,
                 const Icon(
@@ -88,10 +107,16 @@ class WorkExperienceWidget extends StatelessWidget {
                 5.horizontalSpace,
                 Text(
                   city,
-                  style: TextThemeStyles.labelSmall.copyWith(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: isMobile
+                      ? TextThemeStyles.labelSmall.copyWith(
+                          fontSize: 8.sp,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        )
+                      : TextThemeStyles.labelSmall.copyWith(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        ),
                 ),
               ],
             ),
@@ -105,10 +130,16 @@ class WorkExperienceWidget extends StatelessWidget {
                 5.horizontalSpace,
                 Text(
                   "${DateFormat('MMMM d,y').format(firstDate)} - ${endDate == null ? '' : DateFormat('MMMM d,y').format(endDate!)}",
-                  style: TextThemeStyles.labelSmall.copyWith(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: isMobile
+                      ? TextThemeStyles.labelSmall.copyWith(
+                          fontSize: 8.sp,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        )
+                      : TextThemeStyles.labelSmall.copyWith(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        ),
                 ),
               ],
             ),
@@ -120,10 +151,15 @@ class WorkExperienceWidget extends StatelessWidget {
             padding: const EdgeInsets.all(4.0),
             child: Text(
               "• $e",
-              style: TextThemeStyles.titleSmall.copyWith(
-                color: color,
-                fontWeight: FontWeight.w600,
-              ),
+              style: isMobile
+                  ? TextThemeStyles.labelMedium.copyWith(
+                      color: color,
+                      fontWeight: FontWeight.w600,
+                    )
+                  : TextThemeStyles.titleSmall.copyWith(
+                      color: color,
+                      fontWeight: FontWeight.w600,
+                    ),
             ),
           ),
         ),

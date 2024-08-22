@@ -13,12 +13,14 @@ class ApplicationWidget extends StatelessWidget {
     required this.asset,
     required this.googlePlayLink,
     required this.appleStoreLink,
+    required this.isMobile,
   });
 
   final String applicationName;
   final String asset;
   final String? googlePlayLink;
   final String? appleStoreLink;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +31,15 @@ class ApplicationWidget extends StatelessWidget {
       children: [
         Text(
           applicationName,
-          style: TextThemeStyles.titleLarge.copyWith(
-            fontWeight: FontWeight.w600,
-            color: color,
-          ),
+          style: isMobile
+              ? TextThemeStyles.labelMedium.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: color,
+                )
+              : TextThemeStyles.titleLarge.copyWith(
+                  fontWeight: FontWeight.w600,
+                  color: color,
+                ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -50,19 +57,25 @@ class ApplicationWidget extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20.r),
                         child: SizedBox(
-                          width: 100.w,
-                          height: 100.w,
+                          width: isMobile ? 50.w : 100.w,
+                          height: isMobile ? 50.w : 100.w,
                           child: Image.asset(asset),
                         ),
                       ),
                       10.verticalSpace,
                       Text(
                         "$applicationName - Google play",
-                        style: TextThemeStyles.titleSmall.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: color,
-                          decoration: TextDecoration.underline,
-                        ),
+                        style: isMobile
+                            ? TextThemeStyles.labelSmall.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: color,
+                                decoration: TextDecoration.underline,
+                              )
+                            : TextThemeStyles.titleSmall.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: color,
+                                decoration: TextDecoration.underline,
+                              ),
                       )
                     ],
                   ),
@@ -82,19 +95,25 @@ class ApplicationWidget extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20.r),
                         child: SizedBox(
-                          width: 100.w,
-                          height: 100.w,
+                          width: isMobile ? 50.w : 100.w,
+                          height: isMobile ? 50.w : 100.w,
                           child: Image.asset(asset),
                         ),
                       ),
                       10.verticalSpace,
                       Text(
                         "$applicationName - Apple Store",
-                        style: TextThemeStyles.titleSmall.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: color,
-                          decoration: TextDecoration.underline,
-                        ),
+                        style: isMobile
+                            ? TextThemeStyles.labelSmall.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: color,
+                                decoration: TextDecoration.underline,
+                              )
+                            : TextThemeStyles.titleSmall.copyWith(
+                                fontWeight: FontWeight.w600,
+                                color: color,
+                                decoration: TextDecoration.underline,
+                              ),
                       )
                     ],
                   ),

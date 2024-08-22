@@ -12,12 +12,14 @@ class ToolWidget extends StatelessWidget {
     required this.asset,
     required this.progressColor,
     required this.progress,
+    required this.isMobile,
   });
 
   final String name;
   final String asset;
   final Color progressColor;
   final double progress;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +28,16 @@ class ToolWidget extends StatelessWidget {
       children: [
         Text(
           name,
-          style: TextThemeStyles.bodyMedium.copyWith(
-            color: Colors.grey,
-            fontWeight: FontWeight.w600,
-          ),
+          style: isMobile
+              ? TextThemeStyles.labelSmall.copyWith(
+                  fontSize: 8.sp,
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600,
+                )
+              : TextThemeStyles.bodyMedium.copyWith(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600,
+                ),
         ),
         15.verticalSpace,
         Row(
@@ -38,14 +46,12 @@ class ToolWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.r),
               child: Container(
                 color: Colors.white,
-                width: 40.w,
-                height: 40.w,
-                child: Image.asset(
-                  asset,
-                ),
+                width: isMobile ? 20.w : 40.w,
+                height: isMobile ? 20.w : 40.w,
+                child: Image.asset(asset),
               ),
             ),
-            25.horizontalSpace,
+            isMobile ? 10.horizontalSpace : 25.horizontalSpace,
             Expanded(
               child: FAProgressBar(
                 currentValue: progress,

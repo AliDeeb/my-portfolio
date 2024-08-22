@@ -6,7 +6,8 @@ import '../../core/constants/app_colors.dart';
 import '../../core/providers/theme_provider.dart';
 
 class ThemeSwitcher extends StatefulWidget {
-  const ThemeSwitcher({super.key});
+  const ThemeSwitcher({super.key,this.isMobile = false});
+  final bool isMobile;
 
   @override
   State<ThemeSwitcher> createState() => _ThemeSwitcherState();

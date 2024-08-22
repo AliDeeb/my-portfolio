@@ -27,8 +27,11 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
 
     return Scaffold(
       appBar: AppBar(),
-      drawer: const Drawer(
-        child: PersonalInfoWidget(),
+      drawer: Drawer(
+        shape: const RoundedRectangleBorder(),
+        surfaceTintColor: Colors.white,
+        width: .5.sw,
+        child: const PersonalInfoWidget(isMobile: true),
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
@@ -38,18 +41,18 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
             Expanded(
               flex: 3,
               child: Padding(
-                padding: EdgeInsetsDirectional.only(end: 75.w),
+                padding: EdgeInsetsDirectional.symmetric(horizontal: 20.w),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    100.verticalSpace,
-                    const AboutMeWidget(),
+                    25.verticalSpace,
+                    const AboutMeWidget(isMobile: true),
                     50.verticalSpace,
-                    const WorkExperiencesWidget(),
+                    const WorkExperiencesWidget(isMobile: true),
                     50.verticalSpace,
-                    const EducationSection(),
+                    const EducationSection(isMobile: true),
                     50.verticalSpace,
-                    const ApplicationsSection(),
+                    const ApplicationsSection(isMobile: true),
                   ],
                 ),
               ),
@@ -61,18 +64,18 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
                 child: Column(
                   children: [
                     50.verticalSpace,
-                    const ThemeSwitcher(),
+                    const ThemeSwitcher(isMobile: true),
                     50.verticalSpace,
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 30.w),
+                      padding: EdgeInsets.symmetric(horizontal: 10.w),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const ToolsWidget(),
+                          const ToolsWidget(isMobile: true),
                           50.verticalSpace,
-                          const ProgrammingLanguages(),
+                          const ProgrammingLanguages(isMobile: true),
                           50.verticalSpace,
-                          const ProfessionalSkillsWidget(),
+                          const ProfessionalSkillsWidget(isMobile: true),
                         ],
                       ),
                     ),

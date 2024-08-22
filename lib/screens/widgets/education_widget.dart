@@ -13,6 +13,7 @@ class EducationWidget extends StatelessWidget {
     required this.time,
     required this.university,
     required this.firstDate,
+    required this.isMobile,
     this.endDate,
   });
   final String education;
@@ -20,6 +21,7 @@ class EducationWidget extends StatelessWidget {
   final String university;
   final DateTime firstDate;
   final DateTime? endDate;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +35,16 @@ class EducationWidget extends StatelessWidget {
           children: [
             Text(
               education,
-              style: TextThemeStyles.titleSmall.copyWith(
-                fontWeight: FontWeight.w600,
-                color: color,
-              ),
+              style: isMobile
+                  ? TextThemeStyles.labelSmall.copyWith(
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.w600,
+                      color: color,
+                    )
+                  : TextThemeStyles.titleSmall.copyWith(
+                      fontWeight: FontWeight.w600,
+                      color: color,
+                    ),
             ),
             Container(
               decoration: BoxDecoration(
@@ -46,10 +54,16 @@ class EducationWidget extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 5.h),
               child: Text(
                 time,
-                style: TextThemeStyles.bodySmall.copyWith(
-                  fontWeight: FontWeight.w600,
-                  color: Colors.blue,
-                ),
+                style: isMobile
+                    ? TextThemeStyles.labelSmall.copyWith(
+                        fontSize: 8.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Colors.blue,
+                      )
+                    : TextThemeStyles.bodySmall.copyWith(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.blue,
+                      ),
               ),
             ),
           ],
@@ -69,10 +83,16 @@ class EducationWidget extends StatelessWidget {
                 5.horizontalSpace,
                 Text(
                   university,
-                  style: TextThemeStyles.labelSmall.copyWith(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: isMobile
+                      ? TextThemeStyles.labelSmall.copyWith(
+                          fontSize: 8.sp,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        )
+                      : TextThemeStyles.labelSmall.copyWith(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        ),
                 ),
               ],
             ),
@@ -86,10 +106,16 @@ class EducationWidget extends StatelessWidget {
                 5.horizontalSpace,
                 Text(
                   "${DateFormat('MMMM d,y').format(firstDate)} - ${endDate == null ? '' : DateFormat('MMMM d,y').format(endDate!)}",
-                  style: TextThemeStyles.labelSmall.copyWith(
-                    color: Colors.grey,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: isMobile
+                      ? TextThemeStyles.labelSmall.copyWith(
+                          fontSize: 8.sp,
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        )
+                      : TextThemeStyles.labelSmall.copyWith(
+                          color: Colors.grey,
+                          fontWeight: FontWeight.w600,
+                        ),
                 ),
               ],
             ),

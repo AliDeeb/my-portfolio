@@ -6,7 +6,8 @@ import '../../core/theme/text_theme_styles.dart';
 import 'work_experience_widget.dart';
 
 class WorkExperiencesWidget extends StatelessWidget {
-  const WorkExperiencesWidget({super.key});
+  const WorkExperiencesWidget({super.key, this.isMobile = false});
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +18,19 @@ class WorkExperiencesWidget extends StatelessWidget {
       children: [
         Text(
           "Work Experience",
-          style: TextThemeStyles.headlineMedium.copyWith(
-            fontWeight: FontWeight.bold,
-            color: color,
-          ),
+          style: isMobile
+              ? TextThemeStyles.titleLarge.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                )
+              : TextThemeStyles.headlineMedium.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
         ),
         50.verticalSpace,
         WorkExperienceWidget(
+          isMobile: isMobile,
           work: "Android / Flutter Developer",
           time: "Full Time",
           city: "Damascuse, Syria",

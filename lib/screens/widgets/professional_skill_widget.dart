@@ -11,10 +11,12 @@ class ProfessionalSkillWidget extends StatelessWidget {
     required this.skill,
     required this.progressColor,
     required this.progress,
+    required this.isMobile,
   });
   final String skill;
   final Color progressColor;
   final double progress;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +25,15 @@ class ProfessionalSkillWidget extends StatelessWidget {
       children: [
         Text(
           skill,
-          style: TextThemeStyles.bodyMedium.copyWith(
-            color: Colors.grey,
-            fontWeight: FontWeight.w600,
-          ),
+          style: isMobile
+              ? TextThemeStyles.labelSmall.copyWith(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600,
+                )
+              : TextThemeStyles.bodyMedium.copyWith(
+                  color: Colors.grey,
+                  fontWeight: FontWeight.w600,
+                ),
         ),
         10.verticalSpace,
         FAProgressBar(

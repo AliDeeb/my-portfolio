@@ -6,7 +6,8 @@ import '../../core/theme/text_theme_styles.dart';
 import 'professional_skill_widget.dart';
 
 class ProfessionalSkillsWidget extends StatefulWidget {
-  const ProfessionalSkillsWidget({super.key});
+  const ProfessionalSkillsWidget({super.key, this.isMobile = false});
+  final bool isMobile;
 
   @override
   State<ProfessionalSkillsWidget> createState() =>
@@ -23,43 +24,54 @@ class _ProfessionalSkillsWidgetState extends State<ProfessionalSkillsWidget> {
       children: [
         Text(
           "Professional Skills",
-          style: TextThemeStyles.headlineSmall.copyWith(
-            fontWeight: FontWeight.bold,
-            color: color,
-          ),
+          style: widget.isMobile
+              ? TextThemeStyles.titleSmall.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                )
+              : TextThemeStyles.headlineSmall.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
         ),
         50.verticalSpace,
-        const ProfessionalSkillWidget(
+        ProfessionalSkillWidget(
+          isMobile: widget.isMobile,
           skill: "Problem-solving",
           progressColor: Colors.blue,
           progress: 100,
         ),
         25.verticalSpace,
-        const ProfessionalSkillWidget(
+        ProfessionalSkillWidget(
+          isMobile: widget.isMobile,
           skill: "Creativity",
           progressColor: Colors.blue,
           progress: 100,
         ),
         25.verticalSpace,
-        const ProfessionalSkillWidget(
+        ProfessionalSkillWidget(
+          isMobile: widget.isMobile,
           skill: "Communication",
           progressColor: Colors.blue,
           progress: 100,
         ),
         25.verticalSpace,
-        const ProfessionalSkillWidget(
+        ProfessionalSkillWidget(
+          isMobile: widget.isMobile,
           skill: "Critical thinking",
           progressColor: Colors.blue,
           progress: 100,
         ),
         25.verticalSpace,
-        const ProfessionalSkillWidget(
+        ProfessionalSkillWidget(
+          isMobile: widget.isMobile,
           skill: "Team work",
           progressColor: Colors.blue,
           progress: 100,
         ),
         25.verticalSpace,
-        const ProfessionalSkillWidget(
+        ProfessionalSkillWidget(
+          isMobile: widget.isMobile,
           skill: "Analytical reasoning.",
           progressColor: Colors.blue,
           progress: 100,
