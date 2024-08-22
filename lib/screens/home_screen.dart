@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_portfolio/screens/widgets/applications_section.dart';
 
 import '../core/theme/custom_theme_colors.dart';
 import 'widgets/about_me_widget.dart';
+import 'widgets/applications_section.dart';
 import 'widgets/education_section.dart';
 import 'widgets/personal_info_widget.dart';
-import 'widgets/professional_skills_widget.dart';
+import 'widgets/programming_languages_widget.dart';
 import 'widgets/theme_switcher.dart';
 import 'widgets/tools_widget.dart';
 import 'widgets/work_experiences_widget.dart';
@@ -66,7 +66,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         children: [
                           const ToolsWidget(),
                           50.verticalSpace,
-                          const ProfessionalSkillsWidget(),
+                          const ProgrammingLanguages(),
+                          50.verticalSpace,
+                          // const ProfessionalSkillsWidget(),
                         ],
                       ),
                     ),

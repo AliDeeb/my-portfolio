@@ -27,18 +27,18 @@ class _ToolsWidgetState extends State<ToolsWidget> {
               ),
         ),
         40.verticalSpace,
-        const ToolWidget(
-          name: "Flutter",
-          asset: AppConstants.IMG_FLUTTER_LOGO,
-          progressColor: Colors.blue,
-          progress: 95,
-        ),
-        const ToolWidget(
-          name: "Dart",
-          asset: AppConstants.IMG_DART_LOGO,
-          progressColor: Color(0xFF136EB9),
-          progress: 95,
-        ),
+        // const ToolWidget(
+        //   name: "Flutter",
+        //   asset: AppConstants.IMG_FLUTTER_LOGO,
+        //   progressColor: Colors.blue,
+        //   progress: 95,
+        // ),
+        // const ToolWidget(
+        //   name: "Dart",
+        //   asset: AppConstants.IMG_DART_LOGO,
+        //   progressColor: Color(0xFF136EB9),
+        //   progress: 95,
+        // ),
         const ToolWidget(
           name: "VScode",
           asset: AppConstants.IMG_VSCODE_LOGO,
