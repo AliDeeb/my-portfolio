@@ -48,6 +48,14 @@ class ApplicationsSection extends StatelessWidget {
               "https://play.google.com/store/apps/details?id=com.hightech.sadaf_application&hl=en_US",
           appleStoreLink: null,
         ),
+        50.verticalSpace,
+        const ApplicationWidget(
+          applicationName: "Fashion Ecommerce",
+          asset: AppConstants.IMG_FASHION_LOGO,
+          googlePlayLink: null,
+          appleStoreLink:
+              "https://apps.apple.com/us/app/fashion-ecommerce/id6504250868",
+        ),
       ],
     );
   }

@@ -14,4 +14,5 @@ class AppConstants {
   static const String IMG_BUNYAN_PLUS_LOGO = "assets/png/bunyan_plus_logo.png";
   static const String IMG_GK_AUTO_LOGO = "assets/png/gk_logo.png";
   static const String IMG_SADAF_LOGO = "assets/png/sadaf_logo.png";
+  static const String IMG_FASHION_LOGO = "assets/png/fashion_logo.png";
 }
