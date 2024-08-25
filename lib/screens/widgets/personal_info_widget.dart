@@ -17,7 +17,7 @@ class PersonalInfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final imageSize = 1.sw * 0.15;
+    final imageSize = 1.sw * (isMobile ? 0.25 : 0.15);
     final textColor =
         Theme.of(context).extension<CustomThemeColors>()!.textColor;
 
@@ -42,7 +42,7 @@ class PersonalInfoWidget extends StatelessWidget {
               Text(
                 "Ali Deeb",
                 style: isMobile
-                    ? TextThemeStyles.titleLarge.copyWith(
+                    ? TextThemeStyles.headlineMedium.copyWith(
                         fontWeight: FontWeight.bold,
                         color: textColor,
                       )
@@ -55,9 +55,9 @@ class PersonalInfoWidget extends StatelessWidget {
               Text(
                 "Senior Flutter Developer",
                 style: isMobile
-                    ? TextThemeStyles.labelSmall.copyWith(
+                    ? TextThemeStyles.titleLarge.copyWith(
                         fontWeight: FontWeight.bold,
-                        fontSize: 10.sp,
+                        // fontSize: 10.sp,
                         color: textColor,
                       )
                     : TextThemeStyles.labelMedium.copyWith(
@@ -89,7 +89,8 @@ class PersonalInfoWidget extends StatelessWidget {
           50.verticalSpace,
           FilledButton(
             style: FilledButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 50.w, vertical: 30.h),
+              padding: EdgeInsets.symmetric(
+                  horizontal: 50.w, vertical: isMobile ? 10.h : 30.h),
             ),
             onPressed: onDownloadResumeTap,
             child: Row(

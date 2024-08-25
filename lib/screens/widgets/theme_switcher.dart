@@ -18,51 +18,54 @@ class _ThemeSwitcherState extends State<ThemeSwitcher> {
   Widget build(BuildContext context) {
     context.select<ThemeProvider, ThemeMode>((p) => p.currentTheme);
 
-    return FittedBox(
-      child: SegmentedButton<ThemeMode>(
-        showSelectedIcon: false,
-        style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.resolveWith<Color>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.selected)) {
-                return Colors.white;
-              }
-              return context.read<ThemeProvider>().currentTheme ==
-                      ThemeMode.light
-                  ? Colors.black
-                  : Colors.white;
-            },
-          ),
-          backgroundColor: MaterialStateProperty.resolveWith<Color>(
-            (Set<MaterialState> states) {
-              if (states.contains(MaterialState.selected)) {
-                return Colors.blue;
-              }
-              return Colors.transparent;
-            },
-          ),
-          side: const MaterialStatePropertyAll(
-            BorderSide(
-              color: AppColors.greyColor200,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      child: FittedBox(
+        child: SegmentedButton<ThemeMode>(
+          showSelectedIcon: false,
+          style: ButtonStyle(
+            foregroundColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+                if (states.contains(MaterialState.selected)) {
+                  return Colors.white;
+                }
+                return context.read<ThemeProvider>().currentTheme ==
+                        ThemeMode.light
+                    ? Colors.black
+                    : Colors.white;
+              },
+            ),
+            backgroundColor: MaterialStateProperty.resolveWith<Color>(
+              (Set<MaterialState> states) {
+                if (states.contains(MaterialState.selected)) {
+                  return Colors.blue;
+                }
+                return Colors.transparent;
+              },
+            ),
+            side: const MaterialStatePropertyAll(
+              BorderSide(
+                color: AppColors.greyColor200,
+              ),
             ),
           ),
+          segments: [
+            ButtonSegment(
+              value: ThemeMode.light,
+              label: FittedBox(
+                  child: Text("Light", style: TextThemeStyles.labelMedium)),
+            ),
+            ButtonSegment(
+              value: ThemeMode.dark,
+              label: FittedBox(
+                  child: Text("Dark", style: TextThemeStyles.labelMedium)),
+            ),
+          ],
+          selected: {context.read<ThemeProvider>().currentTheme},
+          onSelectionChanged: (data) {
+            context.read<ThemeProvider>().currentTheme = data.first;
+          },
         ),
-        segments: [
-          ButtonSegment(
-            value: ThemeMode.light,
-            label: FittedBox(
-                child: Text("Light", style: TextThemeStyles.labelMedium)),
-          ),
-          ButtonSegment(
-            value: ThemeMode.dark,
-            label: FittedBox(
-                child: Text("Dark", style: TextThemeStyles.labelMedium)),
-          ),
-        ],
-        selected: {context.read<ThemeProvider>().currentTheme},
-        onSelectionChanged: (data) {
-          context.read<ThemeProvider>().currentTheme = data.first;
-        },
       ),
     );
   }

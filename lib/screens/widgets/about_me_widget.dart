@@ -35,7 +35,7 @@ I am an experienced and dedicated Flutter Developer with over a decade of profes
         Text(
           aboutMe,
           style: isMobile
-              ? TextThemeStyles.labelSmall.copyWith(
+              ? TextThemeStyles.labelLarge.copyWith(
                   fontSize: 10.sp,
                   color: color,
                   fontWeight: FontWeight.w600,
