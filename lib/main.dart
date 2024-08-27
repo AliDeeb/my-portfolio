@@ -66,14 +66,16 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   void didChangeMetrics() {
     super.didChangeMetrics();
-    Future.delayed(const Duration(milliseconds: 250), () {
+    Future.delayed(const Duration(milliseconds: 100), () {
       final windowSize = MediaQuery.of(context).size;
       if (windowSize.width < 800) {
+        if (isMobile) return;
         setState(() {
           isMobile = true;
           designSize = const Size(612, 812);
         });
       } else {
+        if (!isMobile) return;
         setState(() {
           isMobile = false;
           designSize = const Size(1920, 1080);

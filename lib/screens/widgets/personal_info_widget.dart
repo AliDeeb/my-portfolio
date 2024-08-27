@@ -53,7 +53,7 @@ class PersonalInfoWidget extends StatelessWidget {
               ),
               10.verticalSpace,
               Text(
-                "Senior Flutter Developer",
+                "Flutter Developer",
                 style: isMobile
                     ? TextThemeStyles.titleLarge.copyWith(
                         fontWeight: FontWeight.bold,
