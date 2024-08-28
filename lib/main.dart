@@ -50,12 +50,15 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
             return ScreenUtilInit(
               designSize: designSize,
               builder: (context, child) => MaterialApp(
-                theme: value.currentTheme == ThemeMode.light
-                    ? ThemesData.lightTheme
-                    : ThemesData.darkTheme,
-                debugShowCheckedModeBanner: false,
-                home: isMobile ? const MobileHomeScreen() : const HomeScreen(),
-              ),
+                  theme: value.currentTheme == ThemeMode.light
+                      ? ThemesData.lightTheme
+                      : ThemesData.darkTheme,
+                  debugShowCheckedModeBanner: false,
+                  home: SelectionArea(
+                    child: isMobile
+                        ? const MobileHomeScreen()
+                        : const HomeScreen(),
+                  )),
             );
           },
         );
