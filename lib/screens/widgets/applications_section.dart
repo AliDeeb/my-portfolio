@@ -52,6 +52,16 @@ class ApplicationsSection extends StatelessWidget {
         50.verticalSpace,
         ApplicationWidget(
           isMobile: isMobile,
+          applicationName: "Clock hyper market",
+          asset: AppConstants.IMG_CLOCK_MARKET_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.clockMarket",
+          appleStoreLink:
+              "https://apps.apple.com/us/app/%D9%87%D8%A7%D9%8A%D8%A8%D8%B1-%D9%85%D8%A7%D8%B1%D9%83%D8%AA-%D8%A7%D9%84%D8%B3%D8%A7%D8%B9%D8%A9/id6670540510",
+        ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
           applicationName: "Sadaf Inv",
           asset: AppConstants.IMG_SADAF_LOGO,
           googlePlayLink:
