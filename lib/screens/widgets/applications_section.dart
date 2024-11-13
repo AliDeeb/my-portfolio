@@ -62,20 +62,21 @@ class ApplicationsSection extends StatelessWidget {
         50.verticalSpace,
         ApplicationWidget(
           isMobile: isMobile,
+          applicationName: "Fashion Ecommerce",
+          asset: AppConstants.IMG_FASHION_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.ecommerceFashion",
+          appleStoreLink:
+              "https://apps.apple.com/us/app/fashion-ecommerce/id6504250868",
+        ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
           applicationName: "Sadaf Inv",
           asset: AppConstants.IMG_SADAF_LOGO,
           googlePlayLink:
               "https://play.google.com/store/apps/details?id=com.hightech.sadaf_application&hl=en_US",
           appleStoreLink: null,
-        ),
-        50.verticalSpace,
-        ApplicationWidget(
-          isMobile: isMobile,
-          applicationName: "Fashion Ecommerce",
-          asset: AppConstants.IMG_FASHION_LOGO,
-          googlePlayLink: null,
-          appleStoreLink:
-              "https://apps.apple.com/us/app/fashion-ecommerce/id6504250868",
         ),
       ],
     );
