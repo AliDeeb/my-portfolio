@@ -45,7 +45,7 @@ class ApplicationsSection extends StatelessWidget {
           applicationName: "GK Auto",
           asset: AppConstants.IMG_GK_AUTO_LOGO,
           googlePlayLink:
-              "https://play.google.com/store/apps/details?id=com.osoustech.gkAuto&hl=en",
+              "https://play.google.com/store/apps/details?id=com.osoustech.newGkAuto",
           appleStoreLink:
               "https://apps.apple.com/nl/app/gk-auto-mg-iraq/id6467194629",
         ),
