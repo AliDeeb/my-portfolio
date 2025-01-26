@@ -75,8 +75,8 @@ class ApplicationsSection extends StatelessWidget {
           applicationName: "Sadaf Inv",
           asset: AppConstants.IMG_SADAF_LOGO,
           googlePlayLink:
-              "https://play.google.com/store/apps/details?id=com.hightech.sadaf_application&hl=en_US",
-          appleStoreLink: null,
+              "https://play.google.com/store/apps/details?id=com.osoustech.sadaf_application",
+          appleStoreLink: "https://apps.apple.com/be/app/sadaf/id1584547953",
         ),
       ],
     );
