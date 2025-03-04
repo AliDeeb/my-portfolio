@@ -78,6 +78,24 @@ class ApplicationsSection extends StatelessWidget {
               "https://play.google.com/store/apps/details?id=com.osoustech.sadaf_application",
           appleStoreLink: "https://apps.apple.com/be/app/sadaf/id1584547953",
         ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
+          applicationName: "بنز الفني",
+          asset: AppConstants.IMG_ELECTRICIAN_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.ataaElectrician",
+          appleStoreLink: null,
+        ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
+          applicationName: "بنز الوكيل",
+          asset: AppConstants.IMG_MERCHANT_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.ataaElectricianMerchant",
+          appleStoreLink: null,
+        ),
       ],
     );
   }
