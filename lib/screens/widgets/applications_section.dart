@@ -85,7 +85,7 @@ class ApplicationsSection extends StatelessWidget {
           asset: AppConstants.IMG_ELECTRICIAN_LOGO,
           googlePlayLink:
               "https://play.google.com/store/apps/details?id=com.osoustech.ataaElectrician",
-          appleStoreLink: null,
+          appleStoreLink: "https://apps.apple.com/us/app/%D8%A8%D9%86%D8%B2-%D8%A7%D9%84%D9%81%D9%86%D9%8A/id6742101831",
         ),
         50.verticalSpace,
         ApplicationWidget(
@@ -94,7 +94,7 @@ class ApplicationsSection extends StatelessWidget {
           asset: AppConstants.IMG_MERCHANT_LOGO,
           googlePlayLink:
               "https://play.google.com/store/apps/details?id=com.osoustech.ataaElectricianMerchant",
-          appleStoreLink: null,
+          appleStoreLink: "https://apps.apple.com/us/app/%D8%A8%D9%86%D8%B2-%D8%A7%D9%84%D9%88%D9%83%D9%8A%D9%84/id6742103131",
         ),
       ],
     );
