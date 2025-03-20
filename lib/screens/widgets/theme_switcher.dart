@@ -19,14 +19,14 @@ class _ThemeSwitcherState extends State<ThemeSwitcher> {
     context.select<ThemeProvider, ThemeMode>((p) => p.currentTheme);
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding: EdgeInsets.symmetric(horizontal: widget.isMobile ? 10 : 24),
       child: FittedBox(
         child: SegmentedButton<ThemeMode>(
           showSelectedIcon: false,
           style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.selected)) {
+            foregroundColor: WidgetStateProperty.resolveWith<Color>(
+              (Set<WidgetState> states) {
+                if (states.contains(WidgetState.selected)) {
                   return Colors.white;
                 }
                 return context.read<ThemeProvider>().currentTheme ==
@@ -35,15 +35,15 @@ class _ThemeSwitcherState extends State<ThemeSwitcher> {
                     : Colors.white;
               },
             ),
-            backgroundColor: MaterialStateProperty.resolveWith<Color>(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.selected)) {
+            backgroundColor: WidgetStateProperty.resolveWith<Color>(
+              (Set<WidgetState> states) {
+                if (states.contains(WidgetState.selected)) {
                   return Colors.blue;
                 }
                 return Colors.transparent;
               },
             ),
-            side: const MaterialStatePropertyAll(
+            side: const WidgetStatePropertyAll(
               BorderSide(
                 color: AppColors.greyColor200,
               ),
@@ -53,12 +53,20 @@ class _ThemeSwitcherState extends State<ThemeSwitcher> {
             ButtonSegment(
               value: ThemeMode.light,
               label: FittedBox(
-                  child: Text("Light", style: TextThemeStyles.labelMedium)),
+                child: Text(
+                  "Light",
+                  style: TextThemeStyles.labelMedium,
+                ),
+              ),
             ),
             ButtonSegment(
               value: ThemeMode.dark,
               label: FittedBox(
-                  child: Text("Dark", style: TextThemeStyles.labelMedium)),
+                child: Text(
+                  "Dark",
+                  style: TextThemeStyles.labelMedium,
+                ),
+              ),
             ),
           ],
           selected: {context.read<ThemeProvider>().currentTheme},

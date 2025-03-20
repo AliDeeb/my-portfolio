@@ -70,6 +70,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   void didChangeMetrics() {
     super.didChangeMetrics();
     Future.delayed(const Duration(milliseconds: 100), () {
+      // ignore: use_build_context_synchronously
       final windowSize = MediaQuery.of(context).size;
       if (windowSize.width < 800) {
         if (isMobile) return;

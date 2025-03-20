@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_portfolio/core/theme/text_theme_styles.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_constants.dart';
 import '../../core/theme/custom_theme_colors.dart';
-import 'dart:js' as js;
 
 class PersonalInfoWidget extends StatelessWidget {
   const PersonalInfoWidget({
@@ -55,7 +55,7 @@ class PersonalInfoWidget extends StatelessWidget {
               Text(
                 "Flutter Developer",
                 style: isMobile
-                    ? TextThemeStyles.titleLarge.copyWith(
+                    ? TextThemeStyles.titleSmall.copyWith(
                         fontWeight: FontWeight.bold,
                         // fontSize: 10.sp,
                         color: textColor,
@@ -90,23 +90,29 @@ class PersonalInfoWidget extends StatelessWidget {
           FilledButton(
             style: FilledButton.styleFrom(
               padding: EdgeInsets.symmetric(
-                  horizontal: 50.w, vertical: isMobile ? 10.h : 30.h),
+                horizontal: isMobile ? 20.w : 50.w,
+                vertical: isMobile ? 10.h : 30.h,
+              ),
             ),
             onPressed: onDownloadResumeTap,
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(
+                Icon(
                   Icons.file_download_outlined,
-                  size: 20,
+                  size: isMobile ? 15 : 20,
                   color: Colors.white,
                 ),
                 10.horizontalSpace,
                 Text(
                   "Download Resume",
-                  style: TextThemeStyles.bodyLarge.copyWith(
-                    color: Colors.white,
-                  ),
+                  style: isMobile
+                      ? TextThemeStyles.bodySmall.copyWith(
+                          color: Colors.white,
+                        )
+                      : TextThemeStyles.bodyLarge.copyWith(
+                          color: Colors.white,
+                        ),
                 ),
               ],
             ),
@@ -128,7 +134,7 @@ class PersonalInfoWidget extends StatelessWidget {
                     ),
                     child: Image.asset(
                       AppConstants.IMG_LINKEDIN_LOGO,
-                      height: 50.h,
+                      height: isMobile ? 30.h : 50.h,
                     ),
                   ),
                 ),
@@ -141,7 +147,7 @@ class PersonalInfoWidget extends StatelessWidget {
                     ),
                     child: Image.asset(
                       AppConstants.IMG_GITHUB_LOGO,
-                      height: 50.h,
+                      height: isMobile ? 30.h : 50.h,
                     ),
                   ),
                 ),
@@ -176,18 +182,25 @@ class PersonalInfoWidget extends StatelessWidget {
     );
   }
 
-  void onDownloadResumeTap() {
-    js.context.callMethod('open', [
-      "https://docs.google.com/document/d/1exNrLAESWLeb7SO5Vr9e5vZVwTLY7SqPj2pQLl5NuT8/edit?usp=drive_link"
-    ]);
+  void onDownloadResumeTap() async {
+    final uri = Uri.parse(
+        "https://docs.google.com/document/d/1exNrLAESWLeb7SO5Vr9e5vZVwTLY7SqPj2pQLl5NuT8/edit?usp=drive_link");
+    if (await canLaunchUrl(uri)) {
+      launchUrl(uri);
+    }
   }
 
-  void onLinkedInTap() {
-    js.context
-        .callMethod('open', ['https://www.linkedin.com/in/ali-deeb-62b1561a5']);
+  void onLinkedInTap() async {
+    final uri = Uri.parse("https://www.linkedin.com/in/ali-deeb-62b1561a5");
+    if (await canLaunchUrl(uri)) {
+      launchUrl(uri);
+    }
   }
 
-  void onGithubTap() {
-    js.context.callMethod('open', ['https://github.com/AliDeeb']);
+  void onGithubTap() async {
+    final uri = Uri.parse("https://github.com/AliDeeb");
+    if (await canLaunchUrl(uri)) {
+      launchUrl(uri);
+    }
   }
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/theme/custom_theme_colors.dart';
-import 'dart:js' as js;
-
 import '../../core/theme/text_theme_styles.dart';
 
 class ApplicationWidget extends StatelessWidget {
@@ -47,8 +46,10 @@ class ApplicationWidget extends StatelessWidget {
             if (googlePlayLink != null)
               InkWell(
                 borderRadius: BorderRadius.circular(10.r),
-                onTap: () {
-                  js.context.callMethod('open', [googlePlayLink]);
+                onTap: () async {
+                  if (await canLaunchUrl(Uri.parse(googlePlayLink!))) {
+                    launchUrl(Uri.parse(googlePlayLink!));
+                  }
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(5),
@@ -85,8 +86,10 @@ class ApplicationWidget extends StatelessWidget {
               50.horizontalSpace,
               InkWell(
                 borderRadius: BorderRadius.circular(10.r),
-                onTap: () {
-                  js.context.callMethod('open', [appleStoreLink]);
+                onTap: () async {
+                  if (await canLaunchUrl(Uri.parse(appleStoreLink!))) {
+                    launchUrl(Uri.parse(appleStoreLink!));
+                  }
                 },
                 child: Padding(
                   padding: const EdgeInsets.all(5),
