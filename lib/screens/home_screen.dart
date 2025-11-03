@@ -24,22 +24,34 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final gradient =
         Theme.of(context).extension<CustomThemeColors>()?.toolsSectionGradient;
+    bool isLight = Theme.brightnessOf(context) == Brightness.light;
 
     return Scaffold(
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Expanded(flex: 1, child: PersonalInfoWidget()),
+            10.horizontalSpace,
             Expanded(
               flex: 3,
-              child: Padding(
-                padding: EdgeInsetsDirectional.only(end: 75.w),
+              child: Container(
+                margin: EdgeInsets.only(top: 100.h),
+                decoration: BoxDecoration(
+                  color: isLight ? Colors.grey.shade100 : Colors.grey.shade900,
+                  border: Border.all(color: Colors.blueGrey, width: 0.1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: EdgeInsetsDirectional.only(
+                  top: 50.h,
+                  start: 20.w,
+                  end: 75.w,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    100.verticalSpace,
                     const AboutMeWidget(),
                     50.verticalSpace,
                     const WorkExperiencesWidget(),
@@ -51,6 +63,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+            10.horizontalSpace,
             Expanded(
               flex: 1,
               child: DecoratedBox(

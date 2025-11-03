@@ -20,9 +20,18 @@ class PersonalInfoWidget extends StatelessWidget {
     final imageSize = 1.sw * (isMobile ? 0.25 : 0.15);
     final textColor =
         Theme.of(context).extension<CustomThemeColors>()!.textColor;
+    bool isLight = Theme.brightnessOf(context) == Brightness.light;
 
-    return Padding(
-      padding: EdgeInsets.only(top: 100.h),
+    return Container(
+      margin: EdgeInsets.only(top: 100.h),
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      decoration: isMobile
+          ? null
+          : BoxDecoration(
+              color: isLight ? Colors.grey.shade100 : Colors.grey.shade900,
+              border: Border.all(color: Colors.blueGrey, width: 0.1),
+              borderRadius: BorderRadius.circular(10),
+            ),
       child: Column(
         children: [
           // Name and Photo.
@@ -42,28 +51,38 @@ class PersonalInfoWidget extends StatelessWidget {
               Text(
                 "Ali Deeb",
                 style: isMobile
-                    ? TextThemeStyles.headlineMedium.copyWith(
+                    ? TextThemeStyles.headlineSmall.copyWith(
                         fontWeight: FontWeight.bold,
                         color: textColor,
                       )
-                    : TextThemeStyles.displayMedium.copyWith(
+                    : TextThemeStyles.displaySmall.copyWith(
                         fontWeight: FontWeight.bold,
                         color: textColor,
                       ),
               ),
               10.verticalSpace,
-              Text(
-                "Flutter Developer",
-                style: isMobile
-                    ? TextThemeStyles.titleSmall.copyWith(
-                        fontWeight: FontWeight.bold,
-                        // fontSize: 10.sp,
-                        color: textColor,
-                      )
-                    : TextThemeStyles.labelMedium.copyWith(
-                        fontWeight: FontWeight.bold,
-                        color: textColor,
-                      ),
+              Container(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 2,
+                ),
+                decoration: BoxDecoration(
+                  color: isLight ? Colors.grey.shade200 : Colors.grey.shade800,
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: Text(
+                  "Flutter Developer",
+                  style: isMobile
+                      ? TextThemeStyles.labelMedium.copyWith(
+                          fontWeight: FontWeight.bold,
+                          // fontSize: 10.sp,
+                          color: textColor,
+                        )
+                      : TextThemeStyles.labelMedium.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: textColor,
+                        ),
+                ),
               ),
             ],
           ),
@@ -71,16 +90,16 @@ class PersonalInfoWidget extends StatelessWidget {
 
           // Contact info.
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: isMobile ? 50.w : 100.w),
+            padding: EdgeInsets.symmetric(horizontal: isMobile ? 50.w : 75.w),
             child: Column(
               children: [
                 _buildInfoRow(
                     Icons.email_outlined, "ali1alideeb@gmail.com", context),
                 // const Divider(color: AppColors.greyColor100, height: 30),
                 // _buildInfoRow(Icons.phone_outlined, "0888888888", context),
-                const Divider(color: AppColors.greyColor100, height: 30),
+                const Divider(color: AppColors.greyColor200, height: 30),
                 _buildInfoRow(Icons.location_pin, "Syria / Damascus", context),
-                const Divider(color: AppColors.greyColor100, height: 30),
+                const Divider(color: AppColors.greyColor200, height: 30),
               ],
             ),
           ),
@@ -162,12 +181,14 @@ class PersonalInfoWidget extends StatelessWidget {
   Widget _buildInfoRow(IconData icon, String text, BuildContext context) {
     final textColor =
         Theme.of(context).extension<CustomThemeColors>()!.textColor;
+    bool isLight = Theme.brightnessOf(context) == Brightness.light;
 
     return Row(
       children: [
         Icon(
           icon,
-          color: AppColors.greyColor200,
+          color:
+              isLight ? Theme.of(context).primaryColor : AppColors.greyColor200,
           size: 20.sp,
         ),
         15.horizontalSpace,

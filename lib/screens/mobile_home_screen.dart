@@ -24,6 +24,7 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
   Widget build(BuildContext context) {
     final gradient =
         Theme.of(context).extension<CustomThemeColors>()?.toolsSectionGradient;
+    bool isLight = Theme.brightnessOf(context) == Brightness.light;
 
     return Scaffold(
       appBar: AppBar(),
@@ -38,10 +39,22 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            10.horizontalSpace,
             Expanded(
               flex: 3,
-              child: Padding(
-                padding: EdgeInsetsDirectional.symmetric(horizontal: 20.w),
+              child: Container(
+                // padding: EdgeInsetsDirectional.symmetric(horizontal: 20.w),
+                margin: EdgeInsets.only(top: 100.h),
+                decoration: BoxDecoration(
+                  color: isLight ? Colors.grey.shade100 : Colors.grey.shade900,
+                  border: Border.all(color: Colors.blueGrey, width: 0.1),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                padding: EdgeInsetsDirectional.only(
+                  top: 50.h,
+                  start: 20.w,
+                  end: 75.w,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -57,6 +70,7 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
                 ),
               ),
             ),
+            10.horizontalSpace,
             Expanded(
               flex: 1,
               child: DecoratedBox(
