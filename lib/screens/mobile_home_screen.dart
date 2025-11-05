@@ -27,15 +27,10 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
     // final gradient =
     //     Theme.of(context).extension<CustomThemeColors>()?.toolsSectionGradient;
     bool isLight = Theme.brightnessOf(context) == Brightness.light;
+    final currentTab = context.watch<TabsProvider>().currentTab;
 
     return Scaffold(
       appBar: AppBar(),
-      drawer: Drawer(
-        shape: const RoundedRectangleBorder(),
-        surfaceTintColor: Colors.white,
-        width: .6.sw,
-        child: const PersonalInfoWidget(isMobile: true),
-      ),
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -46,24 +41,35 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
               children: [
                 10.horizontalSpace,
                 Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color:
-                          isLight ? Colors.grey.shade100 : Colors.grey.shade900,
-                      border: Border.all(color: Colors.blueGrey, width: 0.1),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    padding: EdgeInsetsDirectional.only(
-                      top: 50.h,
-                      start: 20.w,
-                      end: 75.w,
-                    ),
-                    child: Builder(
-                      builder: (context) {
-                        final currentTab =
-                            context.watch<TabsProvider>().currentTab;
-
-                        return Column(
+                  child: Column(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: isLight
+                              ? Colors.grey.shade100
+                              : Colors.grey.shade900,
+                          border:
+                              Border.all(color: Colors.blueGrey, width: 0.1),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const PersonalInfoWidget(isMobile: true),
+                      ),
+                      20.verticalSpace,
+                      Container(
+                        decoration: BoxDecoration(
+                          color: isLight
+                              ? Colors.grey.shade100
+                              : Colors.grey.shade900,
+                          border:
+                              Border.all(color: Colors.blueGrey, width: 0.1),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        padding: EdgeInsetsDirectional.only(
+                          top: 50.h,
+                          start: 20.w,
+                          end: 75.w,
+                        ),
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             if (currentTab == TabsEnum.about) ...[
@@ -91,11 +97,12 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
                               ),
                             ],
                           ],
-                        );
-                      },
-                    ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
+                10.horizontalSpace,
               ],
             ),
           ),
