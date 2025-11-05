@@ -34,74 +34,60 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
         children: [
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.symmetric(vertical: 75.h),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            padding: EdgeInsets.symmetric(vertical: 75.h, horizontal: 10.w),
+            child: Column(
               children: [
-                10.horizontalSpace,
-                Expanded(
+                Container(
+                  decoration: BoxDecoration(
+                    color:
+                        isLight ? Colors.grey.shade100 : Colors.grey.shade900,
+                    border: Border.all(color: Colors.blueGrey, width: 0.1),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const PersonalInfoWidget(isMobile: true),
+                ),
+                20.verticalSpace,
+                Container(
+                  decoration: BoxDecoration(
+                    color:
+                        isLight ? Colors.grey.shade100 : Colors.grey.shade900,
+                    border: Border.all(color: Colors.blueGrey, width: 0.1),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  padding: EdgeInsetsDirectional.only(
+                    top: 50.h,
+                    start: 20.w,
+                    end: 75.w,
+                  ),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: isLight
-                              ? Colors.grey.shade100
-                              : Colors.grey.shade900,
-                          border:
-                              Border.all(color: Colors.blueGrey, width: 0.1),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: const PersonalInfoWidget(isMobile: true),
-                      ),
-                      20.verticalSpace,
-                      Container(
-                        decoration: BoxDecoration(
-                          color: isLight
-                              ? Colors.grey.shade100
-                              : Colors.grey.shade900,
-                          border:
-                              Border.all(color: Colors.blueGrey, width: 0.1),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        padding: EdgeInsetsDirectional.only(
-                          top: 50.h,
-                          start: 20.w,
-                          end: 75.w,
-                        ),
-                        child: Column(
+                      if (currentTab == TabsEnum.about) ...[
+                        const AboutMeWidget(isMobile: true),
+                        50.verticalSpace,
+                        const EducationSection(isMobile: true),
+                        50.verticalSpace,
+                        const WorkExperiencesWidget(isMobile: true),
+                        50.verticalSpace,
+                      ],
+                      if (currentTab == TabsEnum.portfolio) ...[
+                        const ApplicationsSection(isMobile: true),
+                      ],
+                      if (currentTab == TabsEnum.skills) ...[
+                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            if (currentTab == TabsEnum.about) ...[
-                              const AboutMeWidget(isMobile: true),
-                              50.verticalSpace,
-                              const EducationSection(isMobile: true),
-                              50.verticalSpace,
-                              const WorkExperiencesWidget(isMobile: true),
-                              50.verticalSpace,
-                            ],
-                            if (currentTab == TabsEnum.portfolio) ...[
-                              const ApplicationsSection(isMobile: true),
-                            ],
-                            if (currentTab == TabsEnum.skills) ...[
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const ToolsWidget(isMobile: true),
-                                  50.verticalSpace,
-                                  const ProgrammingLanguages(isMobile: true),
-                                  50.verticalSpace,
-                                  const ProfessionalSkillsWidget(
-                                      isMobile: true),
-                                ],
-                              ),
-                            ],
+                            const ToolsWidget(isMobile: true),
+                            50.verticalSpace,
+                            const ProgrammingLanguages(isMobile: true),
+                            50.verticalSpace,
+                            const ProfessionalSkillsWidget(isMobile: true),
                           ],
                         ),
-                      ),
+                      ],
                     ],
                   ),
                 ),
-                10.horizontalSpace,
               ],
             ),
           ),
