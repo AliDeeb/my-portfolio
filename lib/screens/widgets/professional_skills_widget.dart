@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/theme/custom_theme_colors.dart';
@@ -78,6 +79,13 @@ class _ProfessionalSkillsWidgetState extends State<ProfessionalSkillsWidget> {
         ),
         25.verticalSpace,
       ],
-    );
+    )
+        .animate()
+        .slideY(
+          begin: 0.05,
+          end: 0,
+          curve: Curves.ease,
+        )
+        .fade();
   }
 }

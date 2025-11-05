@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/constants/app_constants.dart';
@@ -103,6 +104,13 @@ class _ToolsWidgetState extends State<ToolsWidget> {
           progress: 90,
         ),
       ],
-    );
+    )
+        .animate()
+        .slideY(
+          begin: 0.05,
+          end: 0,
+          curve: Curves.ease,
+        )
+        .fade();
   }
 }

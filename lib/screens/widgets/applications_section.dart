@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/constants/app_constants.dart';
@@ -99,6 +100,13 @@ class ApplicationsSection extends StatelessWidget {
               "https://apps.apple.com/us/app/%D8%A8%D9%86%D8%B2-%D8%A7%D9%84%D9%88%D9%83%D9%8A%D9%84/id6742103131",
         ),
       ],
-    );
+    )
+        .animate()
+        .slideY(
+          begin: 0.01,
+          end: 0,
+          curve: Curves.ease,
+        )
+        .fade();
   }
 }

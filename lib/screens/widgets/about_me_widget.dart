@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/theme/custom_theme_colors.dart';
@@ -46,6 +47,13 @@ I am an experienced and dedicated Flutter Developer with over a decade of profes
                 ),
         ),
       ],
-    );
+    )
+        .animate()
+        .slideY(
+          begin: 0.05,
+          end: 0,
+          curve: Curves.ease,
+        )
+        .fade();
   }
 }

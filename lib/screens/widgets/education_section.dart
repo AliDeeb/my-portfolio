@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../core/theme/custom_theme_colors.dart';
@@ -39,6 +40,13 @@ class EducationSection extends StatelessWidget {
           endDate: DateTime(2022, 5, 1),
         ),
       ],
-    );
+    )
+        .animate()
+        .slideY(
+          begin: 0.05,
+          end: 0,
+          curve: Curves.ease,
+        )
+        .fade();
   }
 }
