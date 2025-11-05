@@ -154,11 +154,11 @@ class WorkExperienceWidget extends StatelessWidget {
               style: isMobile
                   ? TextThemeStyles.labelMedium.copyWith(
                       color: color,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                     )
                   : TextThemeStyles.titleSmall.copyWith(
                       color: color,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                     ),
             ),
           ),

@@ -38,11 +38,11 @@ class EducationWidget extends StatelessWidget {
               style: isMobile
                   ? TextThemeStyles.labelSmall.copyWith(
                       fontSize: 10.sp,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       color: color,
                     )
                   : TextThemeStyles.titleSmall.copyWith(
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.w500,
                       color: color,
                     ),
             ),

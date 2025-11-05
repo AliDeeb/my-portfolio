@@ -33,7 +33,7 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
       drawer: Drawer(
         shape: const RoundedRectangleBorder(),
         surfaceTintColor: Colors.white,
-        width: .5.sw,
+        width: .6.sw,
         child: const PersonalInfoWidget(isMobile: true),
       ),
       body: SingleChildScrollView(

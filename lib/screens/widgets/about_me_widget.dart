@@ -36,13 +36,13 @@ I am an experienced and dedicated Flutter Developer with over a decade of profes
           aboutMe,
           style: isMobile
               ? TextThemeStyles.labelLarge.copyWith(
-                  fontSize: 10.sp,
+                  fontSize: 13.sp,
                   color: color,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                 )
               : TextThemeStyles.bodyLarge.copyWith(
                   color: color,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w500,
                 ),
         ),
       ],
