@@ -163,7 +163,7 @@ class WorkExperienceWidget extends StatelessWidget {
             ),
           ),
         ),
-        Divider(color: Colors.grey.shade100, height: 30),
+        // Divider(color: Colors.grey.shade100, height: 30),
       ],
     );
   }

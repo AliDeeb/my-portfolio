@@ -24,11 +24,11 @@ class _ToolsWidgetState extends State<ToolsWidget> {
         Text(
           "Tools",
           style: widget.isMobile
-              ? TextThemeStyles.titleSmall.copyWith(
+              ? TextThemeStyles.titleLarge.copyWith(
                   fontWeight: FontWeight.bold,
                   color: color,
                 )
-              : TextThemeStyles.headlineSmall.copyWith(
+              : TextThemeStyles.headlineMedium.copyWith(
                   fontWeight: FontWeight.bold,
                   color: color,
                 ),

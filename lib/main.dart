@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import 'core/providers/tabs_provider.dart';
 import 'core/providers/theme_provider.dart';
 import 'core/theme/themes_data.dart';
 import 'screens/home_screen.dart';
@@ -42,27 +43,27 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
-      builder: (context, child) {
-        return Consumer<ThemeProvider>(
-          builder: (context, value, _) {
-            return ScreenUtilInit(
-              designSize: designSize,
-              builder: (context, child) => MaterialApp(
-                  theme: value.currentTheme == ThemeMode.light
-                      ? ThemesData.lightTheme
-                      : ThemesData.darkTheme,
-                  debugShowCheckedModeBanner: false,
-                  home: SelectionArea(
-                    child: isMobile
-                        ? const MobileHomeScreen()
-                        : const HomeScreen(),
-                  )),
-            );
-          },
-        );
-      },
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => ThemeProvider()),
+        ChangeNotifierProvider(create: (context) => TabsProvider())
+      ],
+      child: Consumer<ThemeProvider>(
+        builder: (context, value, _) {
+          return ScreenUtilInit(
+            designSize: designSize,
+            builder: (context, child) => MaterialApp(
+              theme: value.currentTheme == ThemeMode.light
+                  ? ThemesData.lightTheme
+                  : ThemesData.darkTheme,
+              debugShowCheckedModeBanner: false,
+              home: SelectionArea(
+                child: isMobile ? const MobileHomeScreen() : const HomeScreen(),
+              ),
+            ),
+          );
+        },
+      ),
     );
   }
 
@@ -76,7 +77,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
         if (isMobile) return;
         setState(() {
           isMobile = true;
-          designSize = const Size(612, 812);
+          designSize = const Size(512, 812);
         });
       } else {
         if (!isMobile) return;
