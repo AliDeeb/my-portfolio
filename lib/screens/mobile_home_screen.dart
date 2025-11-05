@@ -36,81 +36,78 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
         width: .6.sw,
         child: const PersonalInfoWidget(isMobile: true),
       ),
-      body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            10.horizontalSpace,
-            Expanded(
-              flex: 3,
-              child: Padding(
-                padding: EdgeInsets.only(top: 0.h),
-                child: Stack(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        color: isLight
-                            ? Colors.grey.shade100
-                            : Colors.grey.shade900,
-                        border: Border.all(color: Colors.blueGrey, width: 0.1),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      padding: EdgeInsetsDirectional.only(
-                        top: 50.h,
-                        start: 20.w,
-                        end: 75.w,
-                      ),
-                      child: Builder(
-                        builder: (context) {
-                          final currentTab =
-                              context.watch<TabsProvider>().currentTab;
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.only(bottom: 100.h),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                10.horizontalSpace,
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color:
+                          isLight ? Colors.grey.shade100 : Colors.grey.shade900,
+                      border: Border.all(color: Colors.blueGrey, width: 0.1),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: EdgeInsetsDirectional.only(
+                      top: 50.h,
+                      start: 20.w,
+                      end: 75.w,
+                    ),
+                    child: Builder(
+                      builder: (context) {
+                        final currentTab =
+                            context.watch<TabsProvider>().currentTab;
 
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              if (currentTab == TabsEnum.about) ...[
-                                25.verticalSpace,
-                                const AboutMeWidget(isMobile: true),
-                                50.verticalSpace,
-                                const EducationSection(isMobile: true),
-                                50.verticalSpace,
-                                const WorkExperiencesWidget(isMobile: true),
-                                50.verticalSpace,
-                              ],
-                              if (currentTab == TabsEnum.portfolio) ...[
-                                const ApplicationsSection(isMobile: true),
-                              ],
-                              if (currentTab == TabsEnum.skills) ...[
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const ToolsWidget(isMobile: true),
-                                    50.verticalSpace,
-                                    const ProgrammingLanguages(isMobile: true),
-                                    50.verticalSpace,
-                                    const ProfessionalSkillsWidget(
-                                        isMobile: true),
-                                  ],
-                                ),
-                              ],
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            if (currentTab == TabsEnum.about) ...[
+                              const AboutMeWidget(isMobile: true),
+                              50.verticalSpace,
+                              const EducationSection(isMobile: true),
+                              50.verticalSpace,
+                              const WorkExperiencesWidget(isMobile: true),
+                              50.verticalSpace,
                             ],
-                          );
-                        },
-                      ),
+                            if (currentTab == TabsEnum.portfolio) ...[
+                              const ApplicationsSection(isMobile: true),
+                            ],
+                            if (currentTab == TabsEnum.skills) ...[
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const ToolsWidget(isMobile: true),
+                                  50.verticalSpace,
+                                  const ProgrammingLanguages(isMobile: true),
+                                  50.verticalSpace,
+                                  const ProfessionalSkillsWidget(
+                                      isMobile: true),
+                                ],
+                              ),
+                            ],
+                          ],
+                        );
+                      },
                     ),
-
-                    // tab widget.
-                    const PositionedDirectional(
-                      end: 0,
-                      child: TabsWidget(isMobile: true),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
+              ],
             ),
-          ],
-        ),
+          ),
+
+          // tab widget.
+          const PositionedDirectional(
+            bottom: 0,
+            start: 0,
+            end: 0,
+            child: TabsWidget(isMobile: true),
+          ),
+        ],
       ),
     );
   }

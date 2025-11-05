@@ -21,19 +21,27 @@ class _TabsWidgetState extends State<TabsWidget> {
     final tabsProvider = context.watch<TabsProvider>();
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+      padding: EdgeInsets.symmetric(
+        horizontal: 25,
+        vertical: widget.isMobile ? 20 : 10,
+      ),
       decoration: BoxDecoration(
         color: Colors.grey.shade800,
         border: const Border(
           bottom: BorderSide(color: Colors.blueGrey, width: 0.1),
           left: BorderSide(color: Colors.blueGrey, width: 0.1),
         ),
-        borderRadius: const BorderRadius.only(
-          bottomLeft: Radius.circular(10),
-          topRight: Radius.circular(10),
-        ),
+        borderRadius: widget.isMobile
+            ? null
+            : const BorderRadius.only(
+                bottomLeft: Radius.circular(10),
+                topRight: Radius.circular(10),
+              ),
       ),
       child: Row(
+        mainAxisAlignment: widget.isMobile
+            ? MainAxisAlignment.center
+            : MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         spacing: 50.w,
         children: List.generate(
