@@ -30,12 +30,11 @@ class _MobileHomeScreenState extends State<MobileHomeScreen> {
     final currentTab = context.watch<TabsProvider>().currentTab;
 
     return Scaffold(
-      appBar: AppBar(),
       body: Stack(
         children: [
           SingleChildScrollView(
             physics: const BouncingScrollPhysics(),
-            padding: EdgeInsets.only(bottom: 100.h),
+            padding: EdgeInsets.symmetric(vertical: 75.h),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

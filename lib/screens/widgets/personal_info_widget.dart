@@ -79,6 +79,8 @@ class _PersonalInfoWidgetState extends State<PersonalInfoWidget> {
           PositionedDirectional(
             end: 0,
             child: InkWell(
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
               onTap: () {
                 if (controller.isExpanded) {
                   controller.collapse();
