@@ -54,7 +54,7 @@ class _TabsWidgetState extends State<TabsWidget> {
               child: Text(
                 TabsEnum.values[index].value,
                 style: (widget.isMobile
-                        ? TextThemeStyles.labelSmall
+                        ? TextThemeStyles.labelLarge
                         : TextThemeStyles.titleMedium)
                     .copyWith(
                   decorationColor:

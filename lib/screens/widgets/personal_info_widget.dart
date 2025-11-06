@@ -188,7 +188,7 @@ class _PersonalInfoWidgetState extends State<PersonalInfoWidget> {
     return Text(
       "Ali Deeb",
       style: widget.isMobile
-          ? TextThemeStyles.headlineSmall.copyWith(
+          ? TextThemeStyles.bodyMedium.copyWith(
               fontWeight: FontWeight.bold,
               color: textColor,
             )
@@ -212,9 +212,9 @@ class _PersonalInfoWidgetState extends State<PersonalInfoWidget> {
       child: Text(
         "Flutter Developer",
         style: widget.isMobile
-            ? TextThemeStyles.labelMedium.copyWith(
+            ? TextThemeStyles.labelSmall.copyWith(
                 fontWeight: FontWeight.bold,
-                // fontSize: 10.sp,
+                fontSize: 10.sp,
                 color: textColor,
               )
             : TextThemeStyles.labelMedium.copyWith(
