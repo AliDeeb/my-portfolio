@@ -33,6 +33,35 @@ class ApplicationsSection extends StatelessWidget {
         50.verticalSpace,
         ApplicationWidget(
           isMobile: isMobile,
+          applicationName: "DARBAK",
+          asset: AppConstants.IMG_DARBAK_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.maria",
+          appleStoreLink: "https://apps.apple.com/us/app/darbak/id6752897584",
+        ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
+          applicationName: "Darbak Captain",
+          asset: AppConstants.IMG_DARBAK_CAPTAIN_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.driverMaria",
+          appleStoreLink:
+              "https://apps.apple.com/us/app/darbak-captain/id6752899275",
+        ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
+          applicationName: "Hazal Cosmetics",
+          asset: AppConstants.IMG_HAZAL_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.hazalCosmetics",
+          appleStoreLink:
+              "https://apps.apple.com/us/app/hazal-cosmetics/id6754331669",
+        ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
           applicationName: "Bunyan Plus",
           asset: AppConstants.IMG_BUNYAN_PLUS_LOGO,
           googlePlayLink:

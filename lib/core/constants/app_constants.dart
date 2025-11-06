@@ -38,4 +38,11 @@ class AppConstants {
   // ignore: constant_identifier_names
   static const String IMG_CLOCK_MARKET_LOGO =
       "assets/png/clock_market_logo.png";
+  // ignore: constant_identifier_names
+  static const String IMG_DARBAK_LOGO = "assets/png/darbak_logo.png";
+  // ignore: constant_identifier_names
+  static const String IMG_DARBAK_CAPTAIN_LOGO =
+      "assets/png/darbak_captain_logo.png";
+  // ignore: constant_identifier_names
+  static const String IMG_HAZAL_LOGO = "assets/png/hazal_logo.png";
 }

@@ -40,6 +40,7 @@ class ApplicationWidget extends StatelessWidget {
                   color: color,
                 ),
         ),
+        10.verticalSpace,
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -58,14 +59,14 @@ class ApplicationWidget extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20.r),
                         child: SizedBox(
-                          width: isMobile ? 50.w : 100.w,
-                          height: isMobile ? 50.w : 100.w,
+                          width: isMobile ? 75.w : 100.w,
+                          height: isMobile ? 75.w : 100.w,
                           child: Image.asset(asset),
                         ),
                       ),
                       10.verticalSpace,
                       Text(
-                        "$applicationName - Google play",
+                        "Google play",
                         style: isMobile
                             ? TextThemeStyles.labelSmall.copyWith(
                                 fontWeight: FontWeight.w600,
@@ -83,7 +84,7 @@ class ApplicationWidget extends StatelessWidget {
                 ),
               ),
             if (appleStoreLink != null) ...[
-              50.horizontalSpace,
+              100.horizontalSpace,
               InkWell(
                 borderRadius: BorderRadius.circular(10.r),
                 onTap: () async {
@@ -98,14 +99,14 @@ class ApplicationWidget extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20.r),
                         child: SizedBox(
-                          width: isMobile ? 50.w : 100.w,
-                          height: isMobile ? 50.w : 100.w,
+                          width: isMobile ? 75.w : 100.w,
+                          height: isMobile ? 75.w : 100.w,
                           child: Image.asset(asset),
                         ),
                       ),
                       10.verticalSpace,
                       Text(
-                        "$applicationName - Apple Store",
+                        "Apple Store",
                         style: isMobile
                             ? TextThemeStyles.labelSmall.copyWith(
                                 fontWeight: FontWeight.w600,

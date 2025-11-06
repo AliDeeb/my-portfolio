@@ -128,7 +128,7 @@ class _PersonalInfoWidgetState extends State<PersonalInfoWidget> {
 
     return Container(
       margin: EdgeInsets.only(top: 100.h),
-      padding: const EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 20),
       decoration: widget.isMobile
           ? null
           : BoxDecoration(
