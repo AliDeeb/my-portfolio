@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       padding: EdgeInsetsDirectional.only(
                         top: 50.h,
                         start: 20.w,
-                        end: 75.w,
+                        end: 20.w,
                       ),
                       child: Builder(
                         builder: (context) {

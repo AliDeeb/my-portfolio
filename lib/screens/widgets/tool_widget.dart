@@ -46,8 +46,8 @@ class ToolWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.r),
               child: Container(
                 color: Colors.white,
-                width: isMobile ? 20.w : 40.w,
-                height: isMobile ? 20.w : 40.w,
+                width: isMobile ? 30.w : 40.w,
+                height: isMobile ? 30.w : 40.w,
                 child: Image.asset(asset),
               ),
             ),
