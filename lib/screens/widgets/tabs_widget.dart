@@ -21,9 +21,8 @@ class _TabsWidgetState extends State<TabsWidget> {
     final tabsProvider = context.watch<TabsProvider>();
 
     return Container(
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         horizontal: 25,
-        vertical: widget.isMobile ? 20 : 10,
       ),
       decoration: BoxDecoration(
         color: Colors.grey.shade800,
@@ -51,25 +50,32 @@ class _TabsWidgetState extends State<TabsWidget> {
               onTap: () {
                 tabsProvider.currentTab = TabsEnum.values[index];
               },
-              child: Text(
-                TabsEnum.values[index].value,
-                style: (widget.isMobile
-                        ? TextThemeStyles.labelLarge
-                        : TextThemeStyles.titleMedium)
-                    .copyWith(
-                  decorationColor:
-                      tabsProvider.currentTab == TabsEnum.values[index]
-                          ? Colors.blue
-                          : null,
-                  decoration: tabsProvider.currentTab == TabsEnum.values[index]
-                      ? TextDecoration.underline
-                      : null,
-                  fontWeight: tabsProvider.currentTab == TabsEnum.values[index]
-                      ? FontWeight.bold
-                      : null,
-                  color: tabsProvider.currentTab == TabsEnum.values[index]
-                      ? Colors.blue
-                      : null,
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: widget.isMobile ? 20 : 10,
+                ),
+                child: Text(
+                  TabsEnum.values[index].value,
+                  style: (widget.isMobile
+                          ? TextThemeStyles.labelLarge
+                          : TextThemeStyles.titleMedium)
+                      .copyWith(
+                    decorationColor:
+                        tabsProvider.currentTab == TabsEnum.values[index]
+                            ? Colors.blue
+                            : null,
+                    decoration:
+                        tabsProvider.currentTab == TabsEnum.values[index]
+                            ? TextDecoration.underline
+                            : null,
+                    fontWeight:
+                        tabsProvider.currentTab == TabsEnum.values[index]
+                            ? FontWeight.bold
+                            : null,
+                    color: tabsProvider.currentTab == TabsEnum.values[index]
+                        ? Colors.blue
+                        : null,
+                  ),
                 ),
               ),
             );
