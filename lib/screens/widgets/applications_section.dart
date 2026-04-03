@@ -33,6 +33,25 @@ class ApplicationsSection extends StatelessWidget {
         50.verticalSpace,
         ApplicationWidget(
           isMobile: isMobile,
+          applicationName: "Crenny",
+          asset: AppConstants.IMG_CRENNY_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.crenny",
+          appleStoreLink: "https://apps.apple.com/us/app/crenny/id6759951220",
+        ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
+          applicationName: "Crenny Provider",
+          asset: AppConstants.IMG_CRENNY_PROVIDER_LOGO,
+          googlePlayLink:
+              "https://play.google.com/store/apps/details?id=com.osoustech.crennydriver",
+          appleStoreLink:
+              "https://apps.apple.com/us/app/crenny-provider/id6759911146",
+        ),
+        50.verticalSpace,
+        ApplicationWidget(
+          isMobile: isMobile,
           applicationName: "DARBAK",
           asset: AppConstants.IMG_DARBAK_LOGO,
           googlePlayLink:
@@ -129,13 +148,6 @@ class ApplicationsSection extends StatelessWidget {
               "https://apps.apple.com/us/app/%D8%A8%D9%86%D8%B2-%D8%A7%D9%84%D9%88%D9%83%D9%8A%D9%84/id6742103131",
         ),
       ],
-    )
-        .animate()
-        .slideY(
-          begin: 0.01,
-          end: 0,
-          curve: Curves.ease,
-        )
-        .fade();
+    ).animate().slideY(begin: 0.01, end: 0, curve: Curves.ease).fade();
   }
 }

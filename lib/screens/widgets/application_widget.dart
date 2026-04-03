@@ -59,8 +59,8 @@ class ApplicationWidget extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20.r),
                         child: SizedBox(
-                          width: isMobile ? 75.w : 100.w,
-                          height: isMobile ? 75.w : 100.w,
+                          width: isMobile ? 75.w : 125.w,
+                          height: isMobile ? 75.w : 125.w,
                           child: Image.asset(asset),
                         ),
                       ),
@@ -78,7 +78,7 @@ class ApplicationWidget extends StatelessWidget {
                                 color: color,
                                 decoration: TextDecoration.underline,
                               ),
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -99,8 +99,8 @@ class ApplicationWidget extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(20.r),
                         child: SizedBox(
-                          width: isMobile ? 75.w : 100.w,
-                          height: isMobile ? 75.w : 100.w,
+                          width: isMobile ? 75.w : 125.w,
+                          height: isMobile ? 75.w : 125.w,
                           child: Image.asset(asset),
                         ),
                       ),
@@ -118,7 +118,7 @@ class ApplicationWidget extends StatelessWidget {
                                 color: color,
                                 decoration: TextDecoration.underline,
                               ),
-                      )
+                      ),
                     ],
                   ),
                 ),
