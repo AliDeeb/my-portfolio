@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:my_portfolio/core/theme/text_theme_styles.dart';
 import 'package:provider/provider.dart';
 

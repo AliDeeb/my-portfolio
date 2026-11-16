@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 /// Centralized the text styles that are used widely in app
